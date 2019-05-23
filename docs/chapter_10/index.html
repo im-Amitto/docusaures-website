@@ -61,9 +61,9 @@ In this chapter we will see how to assign a user to a task.</p>
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="102-create-migration"></a><a href="#102-create-migration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>10.2 Create migration</h2>
 <p>Now let's generate a migration so that we have a table named <code>users</code>.</p>
-<pre><code class="hljs">$ rails generate migration CreateUser
-Running via Spring preloader in process 30090
-     <span class="hljs-built_in"> invoke </span> active_record
+<pre><code class="hljs css language-bash">$ rails generate migration CreateUser
+Running via Spring preloader <span class="hljs-keyword">in</span> process 30090
+      invoke  active_record
       create    db/migrate/20190209145206_create_user.rb
 </code></pre>
 <p>Open the migration file.</p>
@@ -86,14 +86,14 @@ Running via Spring preloader in process 30090
 
 </code></pre>
 <p>Now we need to migrate these changes into our database.</p>
-<pre><code class="hljs"><span class="hljs-variable">$ </span>rails <span class="hljs-symbol">db:</span>migrate
+<pre><code class="hljs css language-bash">$ rails db:migrate
 </code></pre>
 <p>Now we have created the User model but till now there is no relationship between <code>User</code> and <code>Task</code> models.
 Theoretically, a user can have many tasks.</p>
 <p>In order to identify to whom a task is assigned we need to create a new column in <code>tasks</code> table. We will call
 this column <code>user_id</code> since it will stored user id of the person to whom the task is assigned.</p>
 <p>So let's create a migration to add column <code>user_id</code> to <code>tasks</code> table.</p>
-<pre><code class="hljs">$rails <span class="hljs-keyword">generate</span> migration add_user_id_to_tasks
+<pre><code class="hljs css language-bash">$ rails generate migration add_user_id_to_tasks
 </code></pre>
 <p>The migration file will look like this.</p>
 <pre><code class="hljs css language-ruby"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AddUserIdToTasks</span> &lt; ActiveRecord::Migration[5.2]</span>
@@ -104,7 +104,7 @@ this column <code>user_id</code> since it will stored user id of the person to w
 </code></pre>
 <p>Now we'll add a foreign key constraint to the tasks table so that it has only valid user ids in
 <code>user_id</code> column.</p>
-<pre><code class="hljs"><span class="hljs-meta"><span class="hljs-meta-keyword">$rails</span> g migration AddForeignKeyToTask</span>
+<pre><code class="hljs css language-bash">$ rails g migration AddForeignKeyToTask
 </code></pre>
 <p>Add following line to migrated file.</p>
 <pre><code class="hljs css language-ruby"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AddForeignKeyToTask</span> &lt; ActiveRecord::Migration[5.2]</span>
@@ -119,7 +119,7 @@ where <code>from_table</code> is the table with the key column, <code>to_table</
 The third parameter is an option which allows us to define our custom name for the column.
 The fourth parameter options as <code>on_delete: :cascade</code>. This option makes sure that child objects also get deleted when deleting parent.</p>
 <p>Now run db:migrate command to reflect it into the database.</p>
-<pre><code class="hljs"><span class="hljs-meta"><span class="hljs-meta-keyword">$rails</span> db:migrate</span>
+<pre><code class="hljs css language-bash">$ rails db:migrate
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="103-defining-associations-betweek-task-and-user-models"></a><a href="#103-defining-associations-betweek-task-and-user-models" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>10.3 Defining associations betweek Task and User models</h2>
 <p>A user can have many tasks assigned to him/her and tasks belong to a user.
@@ -139,37 +139,37 @@ Rails provides us an easy way to define such associations.</p>
 <p>We can perform all CRUD operations for <code>User</code> by defining the routes, controller and views
 similar to how we had done in <code>Task</code>.</p>
 <p>For now, Let's create user records from Rails console.</p>
-<pre><code class="hljs">$ rails<span class="hljs-built_in"> console
-</span>
+<pre><code class="hljs css language-bash">$ rails console
+
 irb(main):004:0&gt; User.create(name: <span class="hljs-string">"Sam"</span>)
    (0.1ms)  begin transaction
- <span class="hljs-built_in"> User </span>Exists (0.2ms)  SELECT  1 AS one <span class="hljs-keyword">FROM</span> <span class="hljs-string">"users"</span> WHERE <span class="hljs-string">"users"</span>.<span class="hljs-string">"name"</span> = ? LIMIT ?  [[<span class="hljs-string">"name"</span>, <span class="hljs-string">"Sam"</span>], [<span class="hljs-string">"LIMIT"</span>, 1]]
- <span class="hljs-built_in"> User </span>Create (0.3ms)  INSERT INTO <span class="hljs-string">"users"</span> (<span class="hljs-string">"name"</span>, <span class="hljs-string">"created_at"</span>, <span class="hljs-string">"updated_at"</span>) VALUES (?, ?, ?)  [[<span class="hljs-string">"name"</span>, <span class="hljs-string">"Sam"</span>], [<span class="hljs-string">"created_at"</span>, <span class="hljs-string">"2019-02-26 19:20:02.451901"</span>], [<span class="hljs-string">"updated_at"</span>, <span class="hljs-string">"2019-02-26 19:20:02.451901"</span>]]
+  User Exists (0.2ms)  SELECT  1 AS one FROM <span class="hljs-string">"users"</span> WHERE <span class="hljs-string">"users"</span>.<span class="hljs-string">"name"</span> = ? LIMIT ?  [[<span class="hljs-string">"name"</span>, <span class="hljs-string">"Sam"</span>], [<span class="hljs-string">"LIMIT"</span>, 1]]
+  User Create (0.3ms)  INSERT INTO <span class="hljs-string">"users"</span> (<span class="hljs-string">"name"</span>, <span class="hljs-string">"created_at"</span>, <span class="hljs-string">"updated_at"</span>) VALUES (?, ?, ?)  [[<span class="hljs-string">"name"</span>, <span class="hljs-string">"Sam"</span>], [<span class="hljs-string">"created_at"</span>, <span class="hljs-string">"2019-02-26 19:20:02.451901"</span>], [<span class="hljs-string">"updated_at"</span>, <span class="hljs-string">"2019-02-26 19:20:02.451901"</span>]]
    (189.2ms)  commit transaction
-=&gt; #&lt;User id: 1, name: <span class="hljs-string">"Sam"</span>, created_at: <span class="hljs-string">"2019-02-26 19:20:02"</span>, updated_at: <span class="hljs-string">"2019-02-26 19:20:02"</span>&gt;
+=&gt; <span class="hljs-comment">#&lt;User id: 1, name: "Sam", created_at: "2019-02-26 19:20:02", updated_at: "2019-02-26 19:20:02"&gt;</span>
 
 irb(main):005:0&gt; User.create(name: <span class="hljs-string">"John"</span>)
    (0.2ms)  begin transaction
- <span class="hljs-built_in"> User </span>Exists (0.3ms)  SELECT  1 AS one <span class="hljs-keyword">FROM</span> <span class="hljs-string">"users"</span> WHERE <span class="hljs-string">"users"</span>.<span class="hljs-string">"name"</span> = ? LIMIT ?  [[<span class="hljs-string">"name"</span>, <span class="hljs-string">"John"</span>], [<span class="hljs-string">"LIMIT"</span>, 1]]
- <span class="hljs-built_in"> User </span>Create (0.5ms)  INSERT INTO <span class="hljs-string">"users"</span> (<span class="hljs-string">"name"</span>, <span class="hljs-string">"created_at"</span>, <span class="hljs-string">"updated_at"</span>) VALUES (?, ?, ?)  [[<span class="hljs-string">"name"</span>, <span class="hljs-string">"John"</span>], [<span class="hljs-string">"created_at"</span>, <span class="hljs-string">"2019-02-26 19:20:17.609136"</span>], [<span class="hljs-string">"updated_at"</span>, <span class="hljs-string">"2019-02-26 19:20:17.609136"</span>]]
+  User Exists (0.3ms)  SELECT  1 AS one FROM <span class="hljs-string">"users"</span> WHERE <span class="hljs-string">"users"</span>.<span class="hljs-string">"name"</span> = ? LIMIT ?  [[<span class="hljs-string">"name"</span>, <span class="hljs-string">"John"</span>], [<span class="hljs-string">"LIMIT"</span>, 1]]
+  User Create (0.5ms)  INSERT INTO <span class="hljs-string">"users"</span> (<span class="hljs-string">"name"</span>, <span class="hljs-string">"created_at"</span>, <span class="hljs-string">"updated_at"</span>) VALUES (?, ?, ?)  [[<span class="hljs-string">"name"</span>, <span class="hljs-string">"John"</span>], [<span class="hljs-string">"created_at"</span>, <span class="hljs-string">"2019-02-26 19:20:17.609136"</span>], [<span class="hljs-string">"updated_at"</span>, <span class="hljs-string">"2019-02-26 19:20:17.609136"</span>]]
    (181.1ms)  commit transaction
-=&gt; #&lt;User id: 2, name: <span class="hljs-string">"John"</span>, created_at: <span class="hljs-string">"2019-02-26 19:20:17"</span>, updated_at: <span class="hljs-string">"2019-02-26 19:20:17"</span>&gt;
+=&gt; <span class="hljs-comment">#&lt;User id: 2, name: "John", created_at: "2019-02-26 19:20:17", updated_at: "2019-02-26 19:20:17"&gt;</span>
 </code></pre>
 <p>Similarly, Add user <code>Mary</code> and <code>Jane</code>.</p>
 <h2><a class="anchor" aria-hidden="true" id="105-update-new-task-form-to-assign-the-user-to-the-task"></a><a href="#105-update-new-task-form-to-assign-the-user-to-the-task" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>10.5 Update new task form to assign the user to the task</h2>
 <p>Now while creating a task we will assign a user to that task.</p>
 <p>Update <code>tasks/new.html.erb</code> file as following:</p>
-<pre><code class="hljs"><span class="xml">      .
+<pre><code class="hljs css language-ruby">      .
       .
       .
-        <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Add new Task<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">%=</span></span></span><span class="ruby"> form_for(@task) <span class="hljs-keyword">do</span> <span class="hljs-params">|f|</span> </span><span class="xml"><span class="hljs-tag">%&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">%=</span></span></span><span class="ruby"> f.label <span class="hljs-symbol">:description</span> </span><span class="xml"><span class="hljs-tag">%&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">%=</span></span></span><span class="ruby"> f.text_field <span class="hljs-symbol">:description</span> </span><span class="xml"><span class="hljs-tag">%&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">%=</span></span></span><span class="ruby"> collection_select(<span class="hljs-symbol">:task</span>, <span class="hljs-symbol">:assignee_id</span>, User.all, <span class="hljs-symbol">:id</span>, <span class="hljs-symbol">:name</span>) </span><span class="xml"><span class="hljs-tag">%&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">%=</span></span></span><span class="ruby"> f.submit <span class="hljs-string">"Create Task"</span></span><span class="xml"><span class="hljs-tag">%&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">%</span></span></span><span class="ruby"> <span class="hljs-keyword">end</span> </span><span class="xml"><span class="hljs-tag">%&gt;</span>
-</span></code></pre>
+        &lt;h3&gt;Add new Task&lt;/h3&gt;
+    &lt;%= form_for(@task) do |f| %&gt;
+            &lt;%= f.label :description %&gt;
+            &lt;%= f.text_field :description %&gt;
+            &lt;%= collection_select(:task, :assignee_id, User.all, :id, :name) %&gt;
+            &lt;%= f.submit "Create Task"%&gt;
+    &lt;% end %&gt;
+</code></pre>
 <p>we have <code>collection_select(:task, :assignee_id, User.all, :id, :name)</code> in the parameters afters sending form we'll get
 <code>task</code> as params with attribute <code>assignee_id</code>. We are fetching all options for drop down menu from <code>User.all</code>.
 then we are assigning <code>id</code> to <code>_id</code> and we'll display name corresponding to that <code>id</code>.</p>
