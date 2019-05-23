@@ -1,0 +1,142 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Chapter 2 - Task model · BigBinary</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;21-create-task-model&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#21-create-task-model&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2.1 - Create Task Model&lt;/h2&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Chapter 2 - Task model · BigBinary"/><meta property="og:type" content="website"/><meta property="og:url" content="https://im-amitto.github.io/https://im-amitto.github.io/docusaures-website/"/><meta property="og:description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;21-create-task-model&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#21-create-task-model&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2.1 - Create Task Model&lt;/h2&gt;
+"/><meta property="og:image" content="https://im-amitto.github.io/https://im-amitto.github.io/docusaures-website/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://im-amitto.github.io/https://im-amitto.github.io/docusaures-website/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="https://im-amitto.github.io/docusaures-website/img/logo.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="stylesheet" href="./../css/prism.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="./../js/code-block-buttons.js"></script><script type="text/javascript" src="./../js/prism.js"></script><script type="text/javascript" src="./../js/highlighter.js"></script><link rel="stylesheet" href="https://im-amitto.github.io/docusaures-website/css/main.css"/><script src="https://im-amitto.github.io/docusaures-website/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="https://im-amitto.github.io/docusaures-website/"><img class="logo" src="https://im-amitto.github.io/docusaures-website/img/logo.png" alt="BigBinary"/><h2 class="headerTitleWithLogo">BigBinary</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"></ul></nav></div></header></div></div><div class="navPusher singleRowMobileNav"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Chapters</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul class=""><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/">Introduction</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_0">Installation</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Chapters</h3><ul class=""><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_1">Chapter 1 - Building a new Rails application</a></li><li class="navListItem navListItemActive"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_2">Chapter 2 - Task model</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_3">Chapter 3 - Tasks controller</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_4">Chapter 4 - Adding tasks through browser</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_5">Chapter 5 - Show a task</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_6">Chapter 6 - Update the task</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_7">Chapter 7 - Delete the task</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_8">Chapter 8 - Introduction to Validation</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_9">Chapter 9 - Active Record Callbacks and Object Life Cycle</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_10">Chapter 10 - Introducing User model</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_11">Chapter 11 - Authentication</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_12">Chapter 12 - Introduction to Authorization</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_13">Chapter 13 - State Management via Ajax</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_14">Chapter 14 - Adding comments to Tasks</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_15">Chapter 15 - Attaching files</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_16">Chapter 16 - Introduction to Testing and Writing Unit Tests</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_19">Chapter 19 - Configuring Queue Adapters for Background Processing</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Chapter 2 - Task model</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="21-create-task-model"></a><a href="#21-create-task-model" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2.1 - Create Task Model</h2>
+<p>Let's create a model.
+Models are stored in <code>app/models</code>.
+Rails encourages use to have model names are singular
+Now let's create a new file using <code>touch</code> command.</p>
+<pre><code class="hljs css language-bash">$ touch app/models/task.rb
+</code></pre>
+<p>Add the lines as shown below and save it.</p>
+<pre><code class="hljs css language-ruby"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Task</span> &lt; ApplicationRecord</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>We have created our first model.</p>
+<h2><a class="anchor" aria-hidden="true" id="22-add-a-migration-to-create-a-tasks-table"></a><a href="#22-add-a-migration-to-create-a-tasks-table" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2.2 - Add a migration to create a tasks table</h2>
+<p>Migrations are a convenient way to alter your database.
+Let's generate our first migration.</p>
+<pre><code class="hljs css language-bash">$ rails generate migration CreateTasks
+Running via Spring preloader <span class="hljs-keyword">in</span> process 15478
+      invoke  active_record
+      create    db/migrate/20190128151553_create_tasks.rb
+</code></pre>
+<p>We see a file is generated under the <code>db/migrate</code> folder.
+This is where all the migrations reside.</p>
+<p>Now, let's add a table to our <code>Task</code> model.
+Rails encourages us to have pluralized version of the model name as name of the table.
+So in this plural version of <code>Task</code> is <code>Tasks</code>. So <code>Tasks</code> will be nane of the table.</p>
+<p>While creating the table we also want to create a column called <code>description</code>.
+It is a convention in Rails that all tables should have <code>created_at</code> and <code>updated_at</code>
+columns. This is accomplished by adding <code>t.timestamps</code> in the migration as shown below.</p>
+<pre><code class="hljs css language-ruby"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CreateTasks</span> &lt; ActiveRecord::Migration[5.1]</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">change</span></span>
+    create_table <span class="hljs-symbol">:tasks</span> <span class="hljs-keyword">do</span> <span class="hljs-params">|t|</span>
+      t.string <span class="hljs-symbol">:description</span>
+      t.timestamps
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="23-run-migration"></a><a href="#23-run-migration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2.3 - Run migration</h2>
+<p>Now that we have added the migration file,
+let's run the migration so that it takes effect
+and table <code>tasks</code> is created in our database.
+Run the following command in your terminal.</p>
+<pre><code class="hljs css language-bash">$ rails db:migrate
+== 20190128151553 AddTaskModel: migrating =====================================
+-- create_table(:tasks)
+   -&gt; 0.0015s
+== 20190128151553 AddTaskModel: migrated (0.0015s) ============================
+
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="24-introduction-to-rails-console"></a><a href="#24-introduction-to-rails-console" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2.4 - Introduction to Rails console</h2>
+<p>Rails console is a command line program for interacting with the Rails applications.
+It has the full power of the Ruby language and Rails environment.
+We can start the Rails console using the following command.</p>
+<pre><code class="hljs css language-bash">$ rails console
+Running via Spring preloader <span class="hljs-keyword">in</span> process 18878
+Loading development environment (Rails 5.1.6.1)
+irb(main):001:0&gt;
+</code></pre>
+<p>Let's run some commands to see how Rails console can help us get some useful information.</p>
+<ol>
+<li><code>Task.column_names</code> returns the names of all the columns of <code>tasks</code> table.</li>
+</ol>
+<pre><code class="hljs css language-msg">irb(main)<span class="hljs-symbol">:003</span><span class="hljs-symbol">:0</span>&gt; Task.column_names
+=&gt; [<span class="hljs-string">"id"</span>, <span class="hljs-string">"description"</span>, <span class="hljs-string">"created_at"</span>, <span class="hljs-string">"updated_at"</span>]
+</code></pre>
+<p>Notice that we have a column named <code>id</code> present.
+Rails adds this column ,by default, and it serves as the primary key for the table.
+The value of the id auto increments when a new record is created.
+We will see it in action shortly.</p>
+<ol start="2">
+<li><code>Task.count</code> returns the number of records in the table.</li>
+</ol>
+<pre><code class="hljs css language-msg">irb(main)<span class="hljs-symbol">:002</span><span class="hljs-symbol">:0</span>&gt; Task.count
+   (<span class="hljs-number">0.1</span>ms)  SELECT <span class="hljs-built_in">COUNT</span>(*) FROM <span class="hljs-string">"tasks"</span>
+=&gt; <span class="hljs-number">0</span>
+</code></pre>
+<p>It means right now we do not have any record in <code>Tasks</code> table.</p>
+<ol start="3">
+<li><code>Task.create</code> creates and saves a new task in the database.</li>
+</ol>
+<pre><code class="hljs css language-msg">irb(main)<span class="hljs-symbol">:004</span><span class="hljs-symbol">:0</span>&gt; Task.create
+   (<span class="hljs-number">0.3</span>ms)  begin transaction
+  SQL (<span class="hljs-number">2.8</span>ms)  INSERT INTO <span class="hljs-string">"tasks"</span> (<span class="hljs-string">"created_at"</span>, <span class="hljs-string">"updated_at"</span>) VALUES (?, ?)  [[<span class="hljs-string">"created_at"</span>, <span class="hljs-string">"2019-01-28 17:00:26.379031"</span>], [<span class="hljs-string">"updated_at"</span>, <span class="hljs-string">"2019-01-28 17:00:26.379031"</span>]]
+   (<span class="hljs-number">11.7</span>ms)  commit transaction
+=&gt; #&lt;Task <span class="hljs-symbol">id:</span> <span class="hljs-number">1</span>, descripti<span class="hljs-symbol">on:</span> nil, created_<span class="hljs-symbol">at:</span> <span class="hljs-string">"2019-01-28 17:00:26"</span>, updated_<span class="hljs-symbol">at:</span> <span class="hljs-string">"2019-01-28 17:00:26"</span>&gt;
+</code></pre>
+<p>Notice that the id is 1.
+If we create one more task then the id of the new task will be 2.</p>
+<p>We can exit the console by entering <code>exit</code>.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="https://im-amitto.github.io/docusaures-website/docs/chapter_1"><span class="arrow-prev">← </span><span>Chapter 1 - Building a new Rails application</span></a><a class="docs-next button" href="https://im-amitto.github.io/docusaures-website/docs/chapter_3"><span>Chapter 3 - Tasks controller</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#21-create-task-model">2.1 - Create Task Model</a></li><li><a href="#22-add-a-migration-to-create-a-tasks-table">2.2 - Add a migration to create a tasks table</a></li><li><a href="#23-run-migration">2.3 - Run migration</a></li><li><a href="#24-introduction-to-rails-console">2.4 - Introduction to Rails console</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="copyright">Copyright © 2019 BigBinary</section></footer></div></body></html>

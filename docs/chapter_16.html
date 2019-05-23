@@ -1,0 +1,293 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Chapter 16 - Introduction to Testing and Writing Unit Tests · BigBinary</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;161-why-write-tests&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#161-why-write-tests&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;16.1 Why write tests?&lt;/h2&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Chapter 16 - Introduction to Testing and Writing Unit Tests · BigBinary"/><meta property="og:type" content="website"/><meta property="og:url" content="https://im-amitto.github.io/https://im-amitto.github.io/docusaures-website/"/><meta property="og:description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;161-why-write-tests&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#161-why-write-tests&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;16.1 Why write tests?&lt;/h2&gt;
+"/><meta property="og:image" content="https://im-amitto.github.io/https://im-amitto.github.io/docusaures-website/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://im-amitto.github.io/https://im-amitto.github.io/docusaures-website/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="https://im-amitto.github.io/docusaures-website/img/logo.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="stylesheet" href="./../css/prism.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="./../js/code-block-buttons.js"></script><script type="text/javascript" src="./../js/prism.js"></script><script type="text/javascript" src="./../js/highlighter.js"></script><link rel="stylesheet" href="https://im-amitto.github.io/docusaures-website/css/main.css"/><script src="https://im-amitto.github.io/docusaures-website/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="https://im-amitto.github.io/docusaures-website/"><img class="logo" src="https://im-amitto.github.io/docusaures-website/img/logo.png" alt="BigBinary"/><h2 class="headerTitleWithLogo">BigBinary</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"></ul></nav></div></header></div></div><div class="navPusher singleRowMobileNav"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Chapters</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul class=""><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/">Introduction</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_0">Installation</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Chapters</h3><ul class=""><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_1">Chapter 1 - Building a new Rails application</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_2">Chapter 2 - Task model</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_3">Chapter 3 - Tasks controller</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_4">Chapter 4 - Adding tasks through browser</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_5">Chapter 5 - Show a task</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_6">Chapter 6 - Update the task</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_7">Chapter 7 - Delete the task</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_8">Chapter 8 - Introduction to Validation</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_9">Chapter 9 - Active Record Callbacks and Object Life Cycle</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_10">Chapter 10 - Introducing User model</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_11">Chapter 11 - Authentication</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_12">Chapter 12 - Introduction to Authorization</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_13">Chapter 13 - State Management via Ajax</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_14">Chapter 14 - Adding comments to Tasks</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_15">Chapter 15 - Attaching files</a></li><li class="navListItem navListItemActive"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_16">Chapter 16 - Introduction to Testing and Writing Unit Tests</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_19">Chapter 19 - Configuring Queue Adapters for Background Processing</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Chapter 16 - Introduction to Testing and Writing Unit Tests</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="161-why-write-tests"></a><a href="#161-why-write-tests" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>16.1 Why write tests?</h2>
+<p>Testing is an important aspect of software development life cycle.
+It is a means to ensure the quality of product is maintained.
+When your applcation grows in size, you are likely to
+refactor a lot of code. Writing tests will help us
+ensure that changes made to the code adheres to the desired functionality.
+Fortunately, Rails provides us a very easy and efficient way of writing tests.</p>
+<h2><a class="anchor" aria-hidden="true" id="162-test-setup"></a><a href="#162-test-setup" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>16.2 Test setup</h2>
+<p>Whenever a new rails application is created using <code>rails new</code> command,
+you will notice that there is a <code>test</code> directory automatically created.
+This directory also has the following files and directories by default -</p>
+<pre><code class="hljs css language-msg">controllers
+fixtures
+helpers
+integration
+mailers
+models<span class="hljs-built_in">
+system
+</span>application_system_test_case.rb
+test_helper.rb
+</code></pre>
+<p>It is implicit that the directories <code>controllers</code>, <code>helpers</code>, <code>mailers</code> and <code>models</code>
+hold the code and files to test controllers, helpers, mailers and models
+that we added in <code>app</code> directory respectively.
+Files written <code>fixtures</code> are used to organize the data used for testing.
+Integration tests are responsible to test interactions between controllers
+while system tests are responsible to test the app as per user's experience
+on a browser and includes testing Javascript code.
+The file <code>test_helper.rb</code> holds the configuration for all the tests.
+This file will be loaded in all the test files in order to load
+the test configurations.
+Similarly, <code>application_system_test_case.rb</code> holds the default configuration for system tests.
+In this chapter we will focus on testing our <code>Task</code> model.</p>
+<h2><a class="anchor" aria-hidden="true" id="163-testing-task-model"></a><a href="#163-testing-task-model" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>16.3 Testing Task model</h2>
+<p>Create a file named <code>task_test.rb</code> inside <code>test/models</code> directory.
+It's a convention to use <code>_test</code> suffix for all test file names.
+Now add the following code inside <code>task_test.rb</code>.</p>
+<pre><code class="hljs css language-ruby"><span class="hljs-keyword">require</span> <span class="hljs-string">"test_helper"</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TaskTest</span> &lt; ActiveSupport::TestCase</span>
+
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>So now, the class <code>TaskTest</code> can be called a test case because
+it inherits from <code>ActiveSupport::TestCase</code>.
+Now every method that Rails defines for testing is made available to <code>TaskTest</code> class.
+By requiring <code>test_helper</code>, we have ensured the default configurations for testing are made available.
+Let's explore some of the commonly used methods provided by Rails to test various scenarios.</p>
+<h3><a class="anchor" aria-hidden="true" id="1631-testing-truth-value"></a><a href="#1631-testing-truth-value" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>16.3.1 Testing truth value</h3>
+<p>Testing is all about knowing if the expectations matches the actual behaviour.
+We'll use <code>assert</code> function to test if a statement is true.</p>
+<p>Let's define a simple method to test the class for an instance of Task.</p>
+<pre><code class="hljs css language-ruby">
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_is_instance_of_task</span></span>
+    task = Task.new
+    assert task.is_a?(Task) <span class="hljs-comment"># See if object task actually belongs to Task</span>
+  <span class="hljs-keyword">end</span>
+</code></pre>
+<p>Note that we start the name of the method with <code>test_</code>
+so that the test runner understands that this method defines a test
+and is not just any other function defined in the class.</p>
+<p>Now let's observe how this test behaves.
+Open your terminal and run the following command</p>
+<pre><code class="hljs css language-bash">$ rails <span class="hljs-built_in">test</span> <span class="hljs-built_in">test</span>/models/task_test.rb
+Finished <span class="hljs-keyword">in</span> 5.887601s, 0.6794 runs/s, 2.2080 assertions/s.
+1 runs, 1 assertions, 0 failures, 0 errors, 0 skips
+</code></pre>
+<p>We can see the message that there was 1 run i.e., one test method executed.
+The file successfully ran 1 assertion without any failures or errors.</p>
+<p>Here, the expectation was that <code>task.is_a?(Task)</code> should return true.
+This indeed happened and hence assertion passed.
+Let's observe the behaviour for a case when expectation doesn't match the actual result.</p>
+<p>Modify the method as following</p>
+<pre><code class="hljs css language-ruby">  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_instance_of_task</span></span>
+    task = Task.new
+    assert task.is_a?(User)
+  <span class="hljs-keyword">end</span>
+</code></pre>
+<p>Here we are expecting <code>task.is_a?(User)</code> to return true.
+But this will fail because the object <code>task</code> was instantiated from <code>Task</code> class and not from <code>User</code>.
+Let's run our test</p>
+<pre><code class="hljs css language-bash">$ rails <span class="hljs-built_in">test</span> <span class="hljs-built_in">test</span>/models/task_test.rb
+TaskTest<span class="hljs-comment">#test_instance_of_task</span>
+Expected <span class="hljs-literal">false</span> to be truthy.
+
+Finished <span class="hljs-keyword">in</span> 5.887601s, 0.6794 runs/s, 2.2080 assertions/s.
+1 runs, 1 assertions, 1 failures, 0 errors, 0 skips
+</code></pre>
+<p>We can see that 1 assertion was run, but that resulted in failure.</p>
+<p>One way of testing negation or false values is by using <code>refute</code> or <code>assert_not</code> methods.
+Modify our test method as follows</p>
+<pre><code class="hljs css language-ruby">
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_not_instance_of_user</span></span>
+  task = Task.new
+  assert_not task.is_a?(User)
+<span class="hljs-keyword">end</span>
+
+</code></pre>
+<p>Run <code>rails test</code> with file name and you should be able to see no failures this time.</p>
+<h3><a class="anchor" aria-hidden="true" id="1632-testing-equality"></a><a href="#1632-testing-equality" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>16.3.2 Testing Equality</h3>
+<p>Add a new method to <code>task_test.rb</code> file to test description of the task</p>
+<pre><code class="hljs css language-ruby"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TaskTest</span> &lt; ActiveSupport::TestCase</span>
+...
+
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_value_of_description_assigned</span></span>
+    task = Task.new(<span class="hljs-symbol">description:</span> <span class="hljs-string">"Description assigned for testing"</span>)
+
+    assert task.description == <span class="hljs-string">"Description assigned for testing"</span>
+  <span class="hljs-keyword">end</span>
+
+...
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>If you run the <code>rails test</code> with the file name, you should see the test run successfully.
+This is because the truth value of argument to <code>assert</code> method is <code>true</code>.
+We can, however make this a little more readable by using <code>assert_equal</code> method.</p>
+<p>So modify the assertion in the above method to the following</p>
+<pre><code class="hljs css language-ruby">  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_value_of_description_assigned</span></span>
+    task = Task.new(<span class="hljs-symbol">description:</span> <span class="hljs-string">"Description assigned for testing"</span>)
+
+    assert_equal task.description, <span class="hljs-string">"Description assigned for testing"</span>
+  <span class="hljs-keyword">end</span>
+</code></pre>
+<p>Analogous to <code>assert_not</code>, we can use <code>assert_not_equal</code> in cases where we want to test inequality.</p>
+<h3><a class="anchor" aria-hidden="true" id="1633-testing-nil-values"></a><a href="#1633-testing-nil-values" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>16.3.3 Testing nil values</h3>
+<p>Add a method to <code>task_test.rb</code> file to test the created_at of the task record before it's saved.</p>
+<pre><code class="hljs css language-ruby">...
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_value_created_at</span></span>
+    task = Task.new(<span class="hljs-symbol">description:</span> <span class="hljs-string">"This is a test task"</span>)
+    assert_nil task.created_at
+
+    task.save!
+    assert_not_nil task.created_at
+  <span class="hljs-keyword">end</span>
+...
+</code></pre>
+<p>In the above case we are asserting that the value of <code>created_at</code> attribute
+should be nil when task is instantiated while it should have a not nil value
+when the record is saved.
+Verify the results by running <code>rails test test/models/task_test.rb</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="1634-testing-errors"></a><a href="#1634-testing-errors" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>16.3.4 Testing errors</h3>
+<p>ActiveRecord in Rails provides a <code>find</code> method
+that loads the record in memory of the passed id.
+If no such record exists, it raises a <code>ActiveRecord::RecordNoFound</code> error.</p>
+<p>Let's test how this behaviour can be tested.
+Add the following method to the <code>task_test.rb</code> file</p>
+<pre><code class="hljs css language-ruby">...
+
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_error_raised</span></span>
+    assert_raises ActiveRecord::RecordNotFound <span class="hljs-keyword">do</span>
+      Task.find(SecureRandom.uuid)
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+...
+</code></pre>
+<p><code>assert_raises</code> is a method that takes the names of error classes and a block.
+It tests whether the block, when executed raises the error that was passed in the argument.
+So in our example, we are testing if using <code>Task.find</code> with a random unique id raises a <code>ActiveRecord::RecordNotFound</code> error.</p>
+<p>Needless to say, the results can be tested by running <code>rails test test/models/task_test.rb</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="1635-testing-expressions"></a><a href="#1635-testing-expressions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>16.3.5 Testing expressions</h3>
+<p>Let's test if creating a task has actually increased the number of records in the database.
+Add the following code to the test file</p>
+<pre><code class="hljs css language-ruby">...
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_count_of_number_of_tasks</span></span>
+    assert_difference -&gt;{Task.count} <span class="hljs-keyword">do</span>
+      Task.create!(<span class="hljs-symbol">description:</span> <span class="hljs-string">"Creating a task through test"</span>)
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+...
+</code></pre>
+<p>Let's run <code>rails test test/models/task_test.rb</code>. You'll notice that all the tests ran without any error.</p>
+<p>The above code tests that when the block is executed, the result of <code>Task.count</code> changes by 1.
+Let's try adding another line of code to the above method. Modify this test and make it look as follows.</p>
+<pre><code class="hljs css language-ruby">  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_count_of_number_of_tasks</span></span>
+    assert_difference -&gt;{Task.count} <span class="hljs-keyword">do</span>
+      Task.create!(<span class="hljs-symbol">description:</span> <span class="hljs-string">"Creating a task through test"</span>)
+      Task.create!(<span class="hljs-symbol">description:</span> <span class="hljs-string">"Creating another task through test"</span>)
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+</code></pre>
+<p>Now run the test and observe the result</p>
+<pre><code class="hljs css language-bash">$ rails <span class="hljs-built_in">test</span> <span class="hljs-built_in">test</span>/models/task_test.rb
+<span class="hljs-string">"Task.count"</span> didn<span class="hljs-string">'t change by 1.
+Expected: 1
+  Actual: 2
+</span></code></pre>
+<p>In the above case the block inside <code>assert_difference</code> has actually created two task records,
+but we're asserting that it had created only one. So how do we test this?
+Fortunately for us <code>assert_difference</code> helps us pass the count to evaluate
+the difference in the results of the expression. Modify the method as follows and run the tests.</p>
+<pre><code class="hljs css language-ruby">  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">test_count_of_number_of_tasks</span></span>
+    assert_difference -&gt;{Task.count}, <span class="hljs-number">2</span> <span class="hljs-keyword">do</span>
+      Task.create!(<span class="hljs-symbol">description:</span> <span class="hljs-string">"Creating a task through test"</span>)
+      Task.create!(<span class="hljs-symbol">description:</span> <span class="hljs-string">"Creating another task through test"</span>)
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+</code></pre>
+<p>The above code will not result in test failure as we are asserting
+that <code>Tsak.count</code> has changed by 2 when the block was executed.</p>
+<p>In order to test that an expression has not changed, we can use <code>assert_no_difference</code> method.</p>
+<p>Rails provides a larger array of methods for testing and we haven't covered we haven't covered them all in this chapter.
+The idea was to walk through how testing can be done and describe some of the methods that you are most likely to use in the testing.</p>
+<h2><a class="anchor" aria-hidden="true" id="164-a-few-gotchas-of-testing"></a><a href="#164-a-few-gotchas-of-testing" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>16.4 A few gotchas of testing</h2>
+<h3><a class="anchor" aria-hidden="true" id="1641-the-setup-method"></a><a href="#1641-the-setup-method" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>16.4.1 The setup method</h3>
+<p>Every public method written in a test file that starts with <code>test_</code> is a test case.
+As our application grows, we'll have a lot of test cases and these test cases
+may require a some data to be loaded as part of getting things ready for testing.
+To load any such configuration, or to carry out any operation that is common
+to all the tests in the class, we make use of <code>setup</code> method.</p>
+<p>So let's add a setup method to our <code>TaskTest</code> class.</p>
+<pre><code class="hljs css language-ruby"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TaskTest</span> &lt; ActiveSupport::TestCase</span>
+  ...
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">setup</span></span>
+    Task.delete_all
+  <span class="hljs-keyword">end</span>
+  ...
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>What's happening here is that all the records in <code>tasks</code> table get deleted before every test case is executed.</p>
+<h3><a class="anchor" aria-hidden="true" id="1642-writing-tests-in-blocks-instead-of-methods"></a><a href="#1642-writing-tests-in-blocks-instead-of-methods" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>16.4.2 Writing tests in blocks instead of methods</h3>
+<p>In order to have a better readability, we can modify our tests as follows</p>
+<pre><code class="hljs css language-ruby">  test <span class="hljs-string">"error raised"</span> <span class="hljs-keyword">do</span>
+    assert_raises ActiveRecord::RecordNotFound <span class="hljs-keyword">do</span>
+      Task.find(SecureRandom.uuid)
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+</code></pre>
+<p>This gives the exact behaviour to that of the method <code>test_error_raised</code> that we had written in <em>16.3.4</em>.</p>
+<h3><a class="anchor" aria-hidden="true" id="1643-executed-a-single-test"></a><a href="#1643-executed-a-single-test" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>16.4.3 Executed a single test</h3>
+<p>Everytime we run <code>rails test test/models/task_test.rb</code>,
+we notice that all the tests in the file are run.
+Now go to task_test.rb, and choose a test of your choice.
+Let's say you selected the first test that we added <code>test_is_instance_of_task</code>.
+Note down the line number in file where this test is starting. Let's assume that line number is 10.
+Now run the following command in the terminal</p>
+<pre><code class="hljs css language-bash">$ rails <span class="hljs-built_in">test</span> <span class="hljs-built_in">test</span>/models/task_test.rb:10
+</code></pre>
+<p>Voila! We see that only one test is run, which is <code>test_is_instance_of_task</code>.
+That's because we have appened <code>:10</code> in the end of the command to run the test.
+It means, we are asking Rails to run only the test whose code is present in line number 10.
+Observe the behaviour by making changes to this number while running the test.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="https://im-amitto.github.io/docusaures-website/docs/chapter_15"><span class="arrow-prev">← </span><span>Chapter 15 - Attaching files</span></a><a class="docs-next button" href="https://im-amitto.github.io/docusaures-website/docs/chapter_19"><span>Chapter 19 - Configuring Queue Adapters for Background Processing</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#161-why-write-tests">16.1 Why write tests?</a></li><li><a href="#162-test-setup">16.2 Test setup</a></li><li><a href="#163-testing-task-model">16.3 Testing Task model</a><ul class="toc-headings"><li><a href="#1631-testing-truth-value">16.3.1 Testing truth value</a></li><li><a href="#1632-testing-equality">16.3.2 Testing Equality</a></li><li><a href="#1633-testing-nil-values">16.3.3 Testing nil values</a></li><li><a href="#1634-testing-errors">16.3.4 Testing errors</a></li><li><a href="#1635-testing-expressions">16.3.5 Testing expressions</a></li></ul></li><li><a href="#164-a-few-gotchas-of-testing">16.4 A few gotchas of testing</a><ul class="toc-headings"><li><a href="#1641-the-setup-method">16.4.1 The setup method</a></li><li><a href="#1642-writing-tests-in-blocks-instead-of-methods">16.4.2 Writing tests in blocks instead of methods</a></li><li><a href="#1643-executed-a-single-test">16.4.3 Executed a single test</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="copyright">Copyright © 2019 BigBinary</section></footer></div></body></html>

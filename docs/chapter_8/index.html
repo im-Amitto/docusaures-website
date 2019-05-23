@@ -1,0 +1,184 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Chapter 8 - Introduction to Validation · BigBinary</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;We observe that when we submit the form with a blank description, a new task is created.&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Chapter 8 - Introduction to Validation · BigBinary"/><meta property="og:type" content="website"/><meta property="og:url" content="https://im-amitto.github.io/https://im-amitto.github.io/docusaures-website/"/><meta property="og:description" content="&lt;p&gt;We observe that when we submit the form with a blank description, a new task is created.&lt;/p&gt;
+"/><meta property="og:image" content="https://im-amitto.github.io/https://im-amitto.github.io/docusaures-website/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://im-amitto.github.io/https://im-amitto.github.io/docusaures-website/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="https://im-amitto.github.io/docusaures-website/img/logo.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="stylesheet" href="./../css/prism.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="./../js/code-block-buttons.js"></script><script type="text/javascript" src="./../js/prism.js"></script><script type="text/javascript" src="./../js/highlighter.js"></script><link rel="stylesheet" href="https://im-amitto.github.io/docusaures-website/css/main.css"/><script src="https://im-amitto.github.io/docusaures-website/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="https://im-amitto.github.io/docusaures-website/"><img class="logo" src="https://im-amitto.github.io/docusaures-website/img/logo.png" alt="BigBinary"/><h2 class="headerTitleWithLogo">BigBinary</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"></ul></nav></div></header></div></div><div class="navPusher singleRowMobileNav"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Chapters</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul class=""><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/">Introduction</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_0">Installation</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Chapters</h3><ul class=""><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_1">Chapter 1 - Building a new Rails application</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_2">Chapter 2 - Task model</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_3">Chapter 3 - Tasks controller</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_4">Chapter 4 - Adding tasks through browser</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_5">Chapter 5 - Show a task</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_6">Chapter 6 - Update the task</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_7">Chapter 7 - Delete the task</a></li><li class="navListItem navListItemActive"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_8">Chapter 8 - Introduction to Validation</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_9">Chapter 9 - Active Record Callbacks and Object Life Cycle</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_10">Chapter 10 - Introducing User model</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_11">Chapter 11 - Authentication</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_12">Chapter 12 - Introduction to Authorization</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_13">Chapter 13 - State Management via Ajax</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_14">Chapter 14 - Adding comments to Tasks</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_15">Chapter 15 - Attaching files</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_16">Chapter 16 - Introduction to Testing and Writing Unit Tests</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_19">Chapter 19 - Configuring Queue Adapters for Background Processing</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Chapter 8 - Introduction to Validation</h1></header><article><div><span><p>We observe that when we submit the form with a blank description, a new task is created.
+We would want such entries not to be created. So to prevent this, we can add vaidations to our columns.</p>
+<h2><a class="anchor" aria-hidden="true" id="81-make-description-field-a-required-field"></a><a href="#81-make-description-field-a-required-field" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>8.1 - Make <code>description</code> field  a Required Field.</h2>
+<p>We go to our task model <code>task.rb</code> and add the validation.</p>
+<pre><code class="hljs css language-msg"><span class="hljs-keyword">class</span> <span class="hljs-symbol">Task</span> &lt; <span class="hljs-symbol">ApplicationRecord</span>
+  <span class="hljs-symbol">validates</span> :<span class="hljs-symbol">description, <span class="hljs-symbol">presence</span>: <span class="hljs-symbol">true</span></span>
+<span class="hljs-symbol">end</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="82-verify-validation"></a><a href="#82-verify-validation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>8.2 - Verify Validation</h2>
+<p>Before saving an object to the database, Rails runs your validations. If these validations produce any errors, Rails does not save the object.</p>
+<p>Let's fire up the console using <code>$rails console</code>.
+Create an instance using the <code>new</code> method.
+This method does not run validations.</p>
+<pre><code class="hljs css language-msg">irb(main)<span class="hljs-symbol">:011</span><span class="hljs-symbol">:0</span>&gt; <span class="hljs-symbol">t1</span> = Task.new(descripti<span class="hljs-symbol">on:</span> <span class="hljs-string">"I am a task with description"</span>)
+=&gt; #&lt;Task <span class="hljs-symbol">id:</span> nil, descripti<span class="hljs-symbol">on:</span> <span class="hljs-string">"hi"</span>, created_<span class="hljs-symbol">at:</span> nil, updated_<span class="hljs-symbol">at:</span> nil&gt;
+irb(main)<span class="hljs-symbol">:012</span><span class="hljs-symbol">:0</span>&gt; <span class="hljs-symbol">t2</span> = Task.new
+=&gt; #&lt;Task <span class="hljs-symbol">id:</span> nil, descripti<span class="hljs-symbol">on:</span> nil, created_<span class="hljs-symbol">at:</span> nil, updated_<span class="hljs-symbol">at:</span> nil&gt;
+</code></pre>
+<p>So we have two instances t1 and t2 where one has value <code>&quot;I am a task with description&quot;</code> and the other does not have a description assigned.</p>
+<p>We can run the validations using built in method <code>valid?</code> which triggers the validations and returns true if no errors were found in the object, and false otherwise.</p>
+<pre><code class="hljs css language-msg">irb(main)<span class="hljs-symbol">:013</span><span class="hljs-symbol">:0</span>&gt; <span class="hljs-symbol">t1</span>.valid?
+=&gt; <span class="hljs-built_in">true</span>
+irb(main)<span class="hljs-symbol">:014</span><span class="hljs-symbol">:0</span>&gt; <span class="hljs-symbol">t2</span>.valid?
+=&gt; <span class="hljs-built_in">false</span>
+</code></pre>
+<p>All that <code>valid?</code> method requires is an instance of <code>Task</code> to check for validations.
+It returns <code>true</code> on the object <code>t1</code> as <code>description</code> is assigned and <code>false</code> on <code>t2</code> as the <code>description</code> is not assigned.</p>
+<p>We can check for the errors associated with object <code>t2</code> using the <code>errors.messages</code> method, which returns a collection of errors.</p>
+<pre><code class="hljs css language-msg">irb(main)<span class="hljs-symbol">:015</span><span class="hljs-symbol">:0</span>&gt; <span class="hljs-symbol">t2</span>.errors.messages
+=&gt; {<span class="hljs-symbol">:de</span>scription=&gt;[<span class="hljs-string">"can't be blank"</span>]}
+</code></pre>
+<p>Now, we need to make a slight change to the create action of our file <code>tasks_controller.rb</code>.</p>
+<pre><code class="hljs css language-ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">create</span></span>
+  @task = Task.new(task_params)
+  <span class="hljs-keyword">if</span> @task.valid?
+    @task.save
+    redirect_to task_url(@task)
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>We check that if the task is valid or not. If <code>yes</code> (true), it gets redirected to the <code>show</code> page, else it throws an error.</p>
+<h2><a class="anchor" aria-hidden="true" id="83-display-errors"></a><a href="#83-display-errors" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>8.3 - Display errors</h2>
+<p>Rails provides a method <code>errors.full_messages</code> which returns an array of all the errors. We can render the users to the new page again if the task isn't valid. For that, we will make a change to the <code>create</code> action as follows :</p>
+<pre><code class="hljs css language-ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">create</span></span>
+  @task = Task.new(task_params)
+  <span class="hljs-keyword">if</span> @task.valid?
+    @task.save
+    redirect_to task_url(@task)
+  <span class="hljs-keyword">else</span>
+    render <span class="hljs-string">'new'</span> <span class="hljs-comment">#Render the new page when task is not saved to the db.</span>
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>To display the errors, we make the following changes to the file <code>new.html.erb</code></p>
+<pre><code class="hljs css language-ruby">&lt;div&gt;
+  &lt;% if @task.errors.any? %&gt;
+    &lt;ul&gt;
+      &lt;% @task.errors.full_messages.each do |msg| %&gt;
+        &lt;li&gt;&lt;%= msg %&gt;&lt;/li&gt;
+      &lt;% end %&gt;
+    &lt;/ul&gt;
+  &lt;% end %&gt;
+  &lt;h3&gt;Add new Task&lt;/h3&gt;
+  &lt;%= form_for(@task) do |f| %&gt;
+    &lt;%= f.label :description %&gt;
+    &lt;%= f.text_field :description %&gt;
+    &lt;%= f.submit "Create Task"%&gt;
+  &lt;% end %&gt;
+&lt;/div&gt;
+</code></pre>
+<p>So, if the instance <code>@task</code> contains any errors, the control enters the <code>if</code> block and iterates through the array returned by the method <code>errors.full_messages</code> and displays each element (1 error at a time). Let's try submitting the form with no <code>description</code>.</p>
+<p><img src="./../img/DisplayErrorMessage.png" alt="alt text"></p>
+<p>The error message is displayed at the top after the controller renders the new page again and the <code>if</code> condition being true (since <code>description</code> field was blank), it displays the only error message which we expected.</p>
+<h2><a class="anchor" aria-hidden="true" id="84-validation-scope"></a><a href="#84-validation-scope" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>8.4 - Validation Scope</h2>
+<p>Let's fire up our console using the command <code>$ rails console</code>.
+Get the total number of tasks in your db by running <code>Task.count</code>.</p>
+<pre><code class="hljs css language-msg">irb(main)<span class="hljs-symbol">:013</span><span class="hljs-symbol">:0</span>&gt; Task.count
+   (<span class="hljs-number">0.5</span>ms)  SELECT <span class="hljs-built_in">COUNT</span>(*) FROM <span class="hljs-string">"tasks"</span>
+=&gt; <span class="hljs-number">1</span>
+</code></pre>
+<p>The count is <code>1</code> and yours maybe different.
+Now, let's run a raw sql query and see what happens when we don't pass any value for <code>description</code> field.</p>
+<pre><code class="hljs css language-msg">irb(main)<span class="hljs-symbol">:001</span><span class="hljs-symbol">:0</span>&gt; sql = <span class="hljs-string">"INSERT INTO TASKS (id, created_at, updated_at) VALUES (3, '2019-02-07 10:01:47', '2019-02-07 10:01:47')"</span>
+=&gt; <span class="hljs-string">"INSERT INTO TASKS (id, created_at, updated_at) VALUES (3, '2019-02-07 10:01:47', '2019-02-07 10:01:47')"</span>
+irb(main)<span class="hljs-symbol">:002</span><span class="hljs-symbol">:0</span>&gt; ActiveReco<span class="hljs-symbol">rd:</span><span class="hljs-symbol">:Ba</span>se.connection.execute(sql)
+   (<span class="hljs-number">23.3</span>ms)  INSERT INTO TASKS (id, created_at, updated_at) VALUES (<span class="hljs-number">3</span>, '<span class="hljs-number">2019</span>-<span class="hljs-number">02</span>-<span class="hljs-number">07</span> <span class="hljs-symbol">10:01</span><span class="hljs-symbol">:47</span>', '<span class="hljs-number">2019</span>-<span class="hljs-number">02</span>-<span class="hljs-number">07</span> <span class="hljs-symbol">10:01</span><span class="hljs-symbol">:47</span>')
+=&gt; []
+irb(main)<span class="hljs-symbol">:003</span><span class="hljs-symbol">:0</span>&gt; Task.count
+   (<span class="hljs-number">0.1</span>ms)  SELECT <span class="hljs-built_in">COUNT</span>(*) FROM <span class="hljs-string">"tasks"</span>
+=&gt; <span class="hljs-number">2</span>
+</code></pre>
+<p>We observe that even when we had a validation for the description field, the above query still creates a record with blank field. This is beacuse our validation is not on the database level but at Rails level. Hence our tasks count increments by 1.</p>
+<h2><a class="anchor" aria-hidden="true" id="85-add-migration-to-make-description-field-not-null"></a><a href="#85-add-migration-to-make-description-field-not-null" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>8.5 - Add migration to make description field NOT NULL</h2>
+<p>Now, let's generate a migration for the description field to not allow nil values.</p>
+<pre><code class="hljs css language-msg">$ rails g migration MakeDescriptionNotNull
+Running via Spring preloader in process 24660
+     <span class="hljs-built_in"> invoke </span> active_record
+      create    db/migrate/20190211162942_make_description_not_null.rb
+$
+</code></pre>
+<p>Now let's go to this file generated under <code>db/migrate/</code> folder and add the code to make <code>description</code> not null.</p>
+<pre><code class="hljs css language-msg"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MakeDescriptionNotNull</span> &lt; ActiveRecord::Migration[5.2]</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">change</span></span>
+    change_column_null <span class="hljs-symbol">:tasks</span>, <span class="hljs-symbol">:description</span>, <span class="hljs-literal">false</span>
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>Run the command <code>rails db:migrate</code> to apply the migration.</p>
+<pre><code class="hljs css language-bash">$ rails db:migrate
+== 20190211162942 MakeDescriptionNotNull: migrating ===========================
+-- change_column_null(:tasks, :description, <span class="hljs-literal">false</span>)
+   -&gt; 0.0044s
+== 20190211162942 MakeDescriptionNotNull: migrated (0.0045s) ==================
+
+</code></pre>
+<p>Open the file <code>schema.rb</code> under the <code>db</code> folder. Observe the following line carefully
+<code>t.string &quot;description&quot;, null: false</code>
+Now our <code>description</code> field is set to <em>NOT NULL</em></p>
+<h2><a class="anchor" aria-hidden="true" id="86-verify-validation-again"></a><a href="#86-verify-validation-again" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>8.6 - Verify Validation Again</h2>
+<p>Now fire up the console again using <code>rails c</code>.
+Let's try creating a new task the same way we created before by inserting into the database directly.</p>
+<pre><code class="hljs css language-msg">irb(main):<span class="hljs-number">002</span>:<span class="hljs-number">0</span>&gt; <span class="hljs-keyword">sql</span> = "INSERT INTO TASKS (id, created_at, updated_at) VALUES (4, '2019-02-07 10:01:53', '2019-02-07 10:01:53');"
+=&gt; "INSERT INTO TASKS (id, created_at, updated_at) VALUES (4, '2019-02-07 10:01:53', '2019-02-07 10:01:53');"
+irb(main):<span class="hljs-number">003</span>:<span class="hljs-number">0</span>&gt; ActiveRecord::Base.<span class="hljs-keyword">connection</span>.<span class="hljs-keyword">execute</span>(<span class="hljs-keyword">sql</span>)
+   (<span class="hljs-number">0.7</span>ms)  <span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> TASKS (id, created_at, updated_at) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">4</span>, <span class="hljs-string">'2019-02-07 10:01:53'</span>, <span class="hljs-string">'2019-02-07 10:01:53'</span>);
+Traceback (most recent <span class="hljs-keyword">call</span> last):
+        <span class="hljs-number">1</span>: <span class="hljs-keyword">from</span> (irb):<span class="hljs-number">3</span>
+ActiveRecord::NotNullViolation (SQLite3::ConstraintException: <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">constraint</span> failed: tasks.description: <span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> TASKS (id, created_at, updated_at) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">4</span>, <span class="hljs-string">'2019-02-07 10:01:53'</span>, <span class="hljs-string">'2019-02-07 10:01:53'</span>);)
+irb(main):<span class="hljs-number">004</span>:<span class="hljs-number">0</span>&gt;
+</code></pre>
+<p>As expected, it throws a violation <code>NotNullViolation</code> which means our description can't be nil.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="https://im-amitto.github.io/docusaures-website/docs/chapter_7"><span class="arrow-prev">← </span><span>Chapter 7 - Delete the task</span></a><a class="docs-next button" href="https://im-amitto.github.io/docusaures-website/docs/chapter_9"><span>Chapter 9 - Active Record Callbacks and Object Life Cycle</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#81-make-description-field-a-required-field">8.1 - Make <code>description</code> field a Required Field.</a></li><li><a href="#82-verify-validation">8.2 - Verify Validation</a></li><li><a href="#83-display-errors">8.3 - Display errors</a></li><li><a href="#84-validation-scope">8.4 - Validation Scope</a></li><li><a href="#85-add-migration-to-make-description-field-not-null">8.5 - Add migration to make description field NOT NULL</a></li><li><a href="#86-verify-validation-again">8.6 - Verify Validation Again</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="copyright">Copyright © 2019 BigBinary</section></footer></div></body></html>

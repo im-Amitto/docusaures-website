@@ -1,0 +1,307 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Chapter 1 - Building a new Rails application · BigBinary</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;11-build-a-new-rails-application&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#11-build-a-new-rails-application&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1.1 - Build a new Rails application&lt;/h2&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Chapter 1 - Building a new Rails application · BigBinary"/><meta property="og:type" content="website"/><meta property="og:url" content="https://im-amitto.github.io/https://im-amitto.github.io/docusaures-website/"/><meta property="og:description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;11-build-a-new-rails-application&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#11-build-a-new-rails-application&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1.1 - Build a new Rails application&lt;/h2&gt;
+"/><meta property="og:image" content="https://im-amitto.github.io/https://im-amitto.github.io/docusaures-website/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://im-amitto.github.io/https://im-amitto.github.io/docusaures-website/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="https://im-amitto.github.io/docusaures-website/img/logo.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="stylesheet" href="./../css/prism.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="./../js/code-block-buttons.js"></script><script type="text/javascript" src="./../js/prism.js"></script><script type="text/javascript" src="./../js/highlighter.js"></script><link rel="stylesheet" href="https://im-amitto.github.io/docusaures-website/css/main.css"/><script src="https://im-amitto.github.io/docusaures-website/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="https://im-amitto.github.io/docusaures-website/"><img class="logo" src="https://im-amitto.github.io/docusaures-website/img/logo.png" alt="BigBinary"/><h2 class="headerTitleWithLogo">BigBinary</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"></ul></nav></div></header></div></div><div class="navPusher singleRowMobileNav"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Chapters</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul class=""><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/">Introduction</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_0">Installation</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Chapters</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_1">Chapter 1 - Building a new Rails application</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_2">Chapter 2 - Task model</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_3">Chapter 3 - Tasks controller</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_4">Chapter 4 - Adding tasks through browser</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_5">Chapter 5 - Show a task</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_6">Chapter 6 - Update the task</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_7">Chapter 7 - Delete the task</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_8">Chapter 8 - Introduction to Validation</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_9">Chapter 9 - Active Record Callbacks and Object Life Cycle</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_10">Chapter 10 - Introducing User model</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_11">Chapter 11 - Authentication</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_12">Chapter 12 - Introduction to Authorization</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_13">Chapter 13 - State Management via Ajax</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_14">Chapter 14 - Adding comments to Tasks</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_15">Chapter 15 - Attaching files</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_16">Chapter 16 - Introduction to Testing and Writing Unit Tests</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_19">Chapter 19 - Configuring Queue Adapters for Background Processing</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Chapter 1 - Building a new Rails application</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="11-build-a-new-rails-application"></a><a href="#11-build-a-new-rails-application" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1.1 - Build a new Rails application</h2>
+<p>Let's create a new Rails application.</p>
+<pre><code class="hljs css language-bash">$ rails new tasksmanager
+      create
+      create  README.md
+      create  Rakefile
+      create  .ruby-version
+      create  config.ru
+      create  .gitignore
+      create  Gemfile
+         run  git init from <span class="hljs-string">"."</span>
+Initialized empty Git repository <span class="hljs-keyword">in</span> /Users/raj.singh/code/extra/bigbinary-projects/learn-ruby-on-rails-book/tasksmanager/.git/
+      create  package.json
+      create  app
+      create  app/assets/config/manifest.js
+      create  app/assets/javascripts/application.js
+      create  app/assets/javascripts/cable.js
+      create  app/assets/stylesheets/application.css
+      create  app/channels/application_cable/channel.rb
+      create  app/channels/application_cable/connection.rb
+      create  app/controllers/application_controller.rb
+      create  app/helpers/application_helper.rb
+      create  app/<span class="hljs-built_in">jobs</span>/application_job.rb
+      create  app/mailers/application_mailer.rb
+      create  app/models/application_record.rb
+      create  app/views/layouts/application.html.erb
+      create  app/views/layouts/mailer.html.erb
+      create  app/views/layouts/mailer.text.erb
+      create  app/assets/images/.keep
+      create  app/assets/javascripts/channels
+      create  app/assets/javascripts/channels/.keep
+      create  app/controllers/concerns/.keep
+      create  app/models/concerns/.keep
+      create  bin
+      create  bin/bundle
+      create  bin/rails
+      create  bin/rake
+      create  bin/setup
+      create  bin/update
+      create  bin/yarn
+      create  config
+      create  config/routes.rb
+      create  config/application.rb
+      create  config/environment.rb
+      create  config/cable.yml
+      create  config/puma.rb
+      create  config/spring.rb
+      create  config/storage.yml
+      create  config/environments
+      create  config/environments/development.rb
+      create  config/environments/production.rb
+      create  config/environments/test.rb
+      create  config/initializers
+      create  config/initializers/application_controller_renderer.rb
+      create  config/initializers/assets.rb
+      create  config/initializers/backtrace_silencers.rb
+      create  config/initializers/content_security_policy.rb
+      create  config/initializers/cookies_serializer.rb
+      create  config/initializers/cors.rb
+      create  config/initializers/filter_parameter_logging.rb
+      create  config/initializers/inflections.rb
+      create  config/initializers/mime_types.rb
+      create  config/initializers/new_framework_defaults_5_2.rb
+      create  config/initializers/wrap_parameters.rb
+      create  config/locales
+      create  config/locales/en.yml
+      create  config/master.key
+      append  .gitignore
+      create  config/boot.rb
+      create  config/database.yml
+      create  db
+      create  db/seeds.rb
+      create  lib
+      create  lib/tasks
+      create  lib/tasks/.keep
+      create  lib/assets
+      create  lib/assets/.keep
+      create  <span class="hljs-built_in">log</span>
+      create  <span class="hljs-built_in">log</span>/.keep
+      create  public
+      create  public/404.html
+      create  public/422.html
+      create  public/500.html
+      create  public/apple-touch-icon-precomposed.png
+      create  public/apple-touch-icon.png
+      create  public/favicon.ico
+      create  public/robots.txt
+      create  tmp
+      create  tmp/.keep
+      create  tmp/cache
+      create  tmp/cache/assets
+      create  vendor
+      create  vendor/.keep
+      create  <span class="hljs-built_in">test</span>/fixtures
+      create  <span class="hljs-built_in">test</span>/fixtures/.keep
+      create  <span class="hljs-built_in">test</span>/fixtures/files
+      create  <span class="hljs-built_in">test</span>/fixtures/files/.keep
+      create  <span class="hljs-built_in">test</span>/controllers
+      create  <span class="hljs-built_in">test</span>/controllers/.keep
+      create  <span class="hljs-built_in">test</span>/mailers
+      create  <span class="hljs-built_in">test</span>/mailers/.keep
+      create  <span class="hljs-built_in">test</span>/models
+      create  <span class="hljs-built_in">test</span>/models/.keep
+      create  <span class="hljs-built_in">test</span>/helpers
+      create  <span class="hljs-built_in">test</span>/helpers/.keep
+      create  <span class="hljs-built_in">test</span>/integration
+      create  <span class="hljs-built_in">test</span>/integration/.keep
+      create  <span class="hljs-built_in">test</span>/test_helper.rb
+      create  <span class="hljs-built_in">test</span>/system
+      create  <span class="hljs-built_in">test</span>/system/.keep
+      create  <span class="hljs-built_in">test</span>/application_system_test_case.rb
+      create  storage
+      create  storage/.keep
+      create  tmp/storage
+      create  tmp/storage/.keep
+      remove  config/initializers/cors.rb
+      remove  config/initializers/new_framework_defaults_5_2.rb
+         run  bundle install
+The dependency tzinfo-data (&gt;= 0) will be unused by any of the platforms Bundler is installing <span class="hljs-keyword">for</span>. Bundler is installing <span class="hljs-keyword">for</span> ruby but the dependency is only <span class="hljs-keyword">for</span> x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java`.
+Fetching gem metadata from https://rubygems.org/.........
+Fetching gem metadata from https://rubygems.org/.
+Resolving dependencies...
+Using rake 12.3.2
+Using concurrent-ruby 1.1.4
+Fetching i18n 1.5.3
+Installing i18n 1.5.3
+Using minitest 5.11.3
+Using thread_safe 0.3.6
+Using tzinfo 1.2.5
+Using activesupport 5.2.2
+Using builder 3.2.3
+Using erubi 1.8.0
+Using mini_portile2 2.4.0
+Using nokogiri 1.10.1
+Using rails-dom-testing 2.0.3
+Using crass 1.0.4
+Using loofah 2.2.3
+Using rails-html-sanitizer 1.0.4
+Using actionview 5.2.2
+Using rack 2.0.6
+Using rack-test 1.1.0
+Using actionpack 5.2.2
+Using nio4r 2.3.1
+Using websocket-extensions 0.1.3
+Using websocket-driver 0.7.0
+Using actioncable 5.2.2
+Using globalid 0.4.2
+Using activejob 5.2.2
+Using mini_mime 1.0.1
+Using mail 2.7.1
+Using actionmailer 5.2.2
+Using activemodel 5.2.2
+Using arel 9.0.0
+Using activerecord 5.2.2
+Using mimemagic 0.3.3
+Using marcel 0.3.3
+Using activestorage 5.2.2
+Using public_suffix 3.0.3
+Using addressable 2.6.0
+Using io-like 0.3.0
+Using archive-zip 0.11.0
+Using bindex 0.5.0
+Using msgpack 1.2.6
+Using bootsnap 1.3.2
+Using bundler 2.0.1
+Using byebug 10.0.2
+Using regexp_parser 1.3.0
+Using xpath 3.2.0
+Fetching capybara 3.13.2
+Installing capybara 3.13.2
+Using ffi 1.10.0
+Using childprocess 0.9.0
+Using chromedriver-helper 2.1.0
+Using coffee-script-source 1.12.2
+Using execjs 2.7.0
+Using coffee-script 2.4.1
+Using method_source 0.9.2
+Using thor 0.20.3
+Using railties 5.2.2
+Using coffee-rails 4.2.2
+Using multi_json 1.13.1
+Using jbuilder 2.8.0
+Using rb-fsevent 0.10.3
+Using rb-inotify 0.10.0
+Using ruby_dep 1.5.0
+Using listen 3.1.5
+Using puma 3.12.0
+Using sprockets 3.7.2
+Using sprockets-rails 3.2.1
+Using rails 5.2.2
+Using rubyzip 1.2.2
+Using sass-listen 4.0.0
+Using sass 3.7.3
+Using tilt 2.0.9
+Using sass-rails 5.0.7
+Using selenium-webdriver 3.141.0
+Using spring 2.0.2
+Using spring-watcher-listen 2.0.1
+Using sqlite3 1.3.13
+Using turbolinks-source 5.2.0
+Using turbolinks 5.2.0
+Using uglifier 4.1.20
+Using web-console 3.7.0
+Bundle complete! 18 Gemfile dependencies, 79 gems now installed.
+Use `bundle info [gemname]` to see <span class="hljs-built_in">where</span> a bundled gem is installed.
+Post-install message from i18n:
+
+HEADS UP! i18n 1.1 changed fallbacks to exclude default locale.
+But that may <span class="hljs-built_in">break</span> your application.
+
+Please check your Rails app <span class="hljs-keyword">for</span> <span class="hljs-string">'config.i18n.fallbacks = true'</span>.
+If you<span class="hljs-string">'re using I18n (&gt;= 1.1.0) and Rails (&lt; 5.2.2), this should be
+'</span>config.i18n.fallbacks = [I18n.default_locale]<span class="hljs-string">'.
+If not, fallbacks will be broken in your app by I18n 1.1.x.
+
+For more info see:
+https://github.com/svenfuchs/i18n/releases/tag/v1.1.0
+
+         run  bundle exec spring binstub --all
+* bin/rake: spring inserted
+* bin/rails: spring inserted
+</span></code></pre>
+<h2><a class="anchor" aria-hidden="true" id="12-build-database"></a><a href="#12-build-database" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1.2 Build database</h2>
+<p><a href="https://www.sqlite.org/index.html">SQlite3 database</a>
+is the default database used when new Ruby on Rails application is created.</p>
+<pre><code class="hljs css language-bash">$ <span class="hljs-built_in">cd</span> tasksmanager
+$ rails db:create
+
+Created database <span class="hljs-string">'db/development.sqlite3'</span>
+Created database <span class="hljs-string">'db/test.sqlite3'</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="13-start-server"></a><a href="#13-start-server" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1.3 Start server</h2>
+<p>Now let's start the server.</p>
+<pre><code class="hljs css language-bash">$ rails server
+
+=&gt; Booting Puma
+=&gt; Rails 5.2.2 application starting <span class="hljs-keyword">in</span> development
+=&gt; Run `rails server -h` <span class="hljs-keyword">for</span> more startup options
+Puma starting <span class="hljs-keyword">in</span> single mode...
+* Version 3.12.0 (ruby 2.5.1-p57), codename: Llamas <span class="hljs-keyword">in</span> Pajamas
+* Min threads: 5, max threads: 5
+* Environment: development
+* Listening on tcp://0.0.0.0:3000
+Use Ctrl-C to stop
+</code></pre>
+<p>Open your browser and visit
+<a href="http://localhost:3000">http://localhost:3000</a>.
+You should see
+<a href="https://monosnap.com/direct/SiDAbKoyLaKjvwavKkdH9vtQIVpFsC">default welcome page</a>.</p>
+<p>You can specify the port on which you want to run the server using <code>-p</code> option</p>
+<pre><code class="hljs css language-bash">$ rails server -p 5000
+</code></pre>
+<p>The above command will run server on port 5000.
+The default welcome page can then be accessed at <a href="http://localhost:5000">http://localhost:5000</a>.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="https://im-amitto.github.io/docusaures-website/docs/chapter_0"><span class="arrow-prev">← </span><span>Installation</span></a><a class="docs-next button" href="https://im-amitto.github.io/docusaures-website/docs/chapter_2"><span>Chapter 2 - Task model</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#11-build-a-new-rails-application">1.1 - Build a new Rails application</a></li><li><a href="#12-build-database">1.2 Build database</a></li><li><a href="#13-start-server">1.3 Start server</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="copyright">Copyright © 2019 BigBinary</section></footer></div></body></html>

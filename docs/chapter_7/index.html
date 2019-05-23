@@ -1,0 +1,142 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Chapter 7 - Delete the task · BigBinary</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;In the last chapter, we saw how to update a task to the database.&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Chapter 7 - Delete the task · BigBinary"/><meta property="og:type" content="website"/><meta property="og:url" content="https://im-amitto.github.io/https://im-amitto.github.io/docusaures-website/"/><meta property="og:description" content="&lt;p&gt;In the last chapter, we saw how to update a task to the database.&lt;/p&gt;
+"/><meta property="og:image" content="https://im-amitto.github.io/https://im-amitto.github.io/docusaures-website/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://im-amitto.github.io/https://im-amitto.github.io/docusaures-website/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="https://im-amitto.github.io/docusaures-website/img/logo.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="stylesheet" href="./../css/prism.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="./../js/code-block-buttons.js"></script><script type="text/javascript" src="./../js/prism.js"></script><script type="text/javascript" src="./../js/highlighter.js"></script><link rel="stylesheet" href="https://im-amitto.github.io/docusaures-website/css/main.css"/><script src="https://im-amitto.github.io/docusaures-website/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="https://im-amitto.github.io/docusaures-website/"><img class="logo" src="https://im-amitto.github.io/docusaures-website/img/logo.png" alt="BigBinary"/><h2 class="headerTitleWithLogo">BigBinary</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"></ul></nav></div></header></div></div><div class="navPusher singleRowMobileNav"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Chapters</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul class=""><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/">Introduction</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_0">Installation</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Chapters</h3><ul class=""><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_1">Chapter 1 - Building a new Rails application</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_2">Chapter 2 - Task model</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_3">Chapter 3 - Tasks controller</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_4">Chapter 4 - Adding tasks through browser</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_5">Chapter 5 - Show a task</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_6">Chapter 6 - Update the task</a></li><li class="navListItem navListItemActive"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_7">Chapter 7 - Delete the task</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_8">Chapter 8 - Introduction to Validation</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_9">Chapter 9 - Active Record Callbacks and Object Life Cycle</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_10">Chapter 10 - Introducing User model</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_11">Chapter 11 - Authentication</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_12">Chapter 12 - Introduction to Authorization</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_13">Chapter 13 - State Management via Ajax</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_14">Chapter 14 - Adding comments to Tasks</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_15">Chapter 15 - Attaching files</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_16">Chapter 16 - Introduction to Testing and Writing Unit Tests</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter_19">Chapter 19 - Configuring Queue Adapters for Background Processing</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Chapter 7 - Delete the task</h1></header><article><div><span><p>In the last chapter, we saw how to update a task to the database.
+In this chapter we'll see how to delete a task.</p>
+<h2><a class="anchor" aria-hidden="true" id="71-adding-button-to-delete-the-task"></a><a href="#71-adding-button-to-delete-the-task" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>7.1 - Adding button to delete the task</h2>
+<p>Let's add delete button to Index page.
+For delete button we'll use <code>button_to</code> helper method.</p>
+<pre><code class="hljs css language-ruby">  .
+  .
+  .
+  &lt;h1&gt;Tasks List&lt;/h1&gt;
+  &lt;% @tasks.each do |task| %&gt;
+    &lt;%= task.description %&gt;
+    &lt;%= button_to  "Delete", task, :method =&gt; :delete %&gt;&lt;/br&gt;
+  &lt;% end %&gt;
+
+</code></pre>
+<p>Here first argument for button_to is <code>&quot;Delete&quot;</code>, which is display name of the button.
+Then second argument is <code>task</code>, it is similar to <code>url_for</code> for the particular task.
+Third argument is <code>:method</code>. We can use various methods like <code>get, post, delete</code>.
+Here we want to delete the task so for deleting the method will be <code>delete</code>.</p>
+<p><img src="./../img/AddButton.png" alt="alt text"></p>
+<p>After clicking the button, You will get error <code>No route matches [DELETE]</code>.
+So let's add the necessary route for delete action.</p>
+<p>Open the file <code>/config/routes.rb</code> and add the following line so that our router directs the control to the 'destroy'
+action of Task controller.</p>
+<pre><code class="hljs css language-ruby">Rails.application.routes.draw <span class="hljs-keyword">do</span>
+
+  .
+  .
+  .
+  delete <span class="hljs-string">'/tasks/:id'</span>,      <span class="hljs-symbol">to:</span> <span class="hljs-string">'tasks#destroy'</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p><img src="./../img/DestroyActionError.png" alt="alt text"></p>
+<p>This error was seen because we had not added destroy action in the Task contoller.</p>
+<h2><a class="anchor" aria-hidden="true" id="72-implement-destroy-action-in-taskscontroller"></a><a href="#72-implement-destroy-action-in-taskscontroller" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>7.2 - Implement <code>destroy</code> action in <code>TasksController</code></h2>
+<p>Let's implement the destroy action to our <code>TasksController</code>.</p>
+<pre><code class="hljs css language-ruby"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TasksController</span> &lt; ApplicationController</span>
+  .
+  .
+  .
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">destroy</span></span>
+    task = Task.find(params[<span class="hljs-symbol">:id</span>])
+
+    task.destroy
+    @tasks = Task.all
+    redirect_to tasks_url
+  <span class="hljs-keyword">end</span>
+
+  private
+  .
+  .
+  .
+<span class="hljs-keyword">end</span>
+
+</code></pre>
+<p><code>params[:id]</code> contains the id of task to be deleted. To delete the task use <code>task.destroy</code>.
+After destroying the task we are redirecting to tasks index using <code>redirect_to tasks_url</code>.</p>
+<h2><a class="anchor" aria-hidden="true" id="73-flow-of-deleting-a-task"></a><a href="#73-flow-of-deleting-a-task" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>7.3 - Flow of deleting a task</h2>
+<p>So let's go through the Destroy flow of our task.</p>
+<ul>
+<li>When we click the <code>delete</code> button, button_to uses <code>:method =&gt; delete</code> so delete request goes to router and router
+directs the control to destroy action of TasksController.</li>
+<li>Id of the Task is passed to controller through params. Then the particular task get using <code>Task.find(params[:id])</code>.</li>
+<li><code>task.destroy</code> will remove the task's entry from the database.</li>
+<li>Then we are fetching all the tasks using <code>Task.all</code>.</li>
+<li>Then using the <code>redirect_to tasks_url</code> we are again loading the page that displays the list of tasks.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="74-verify-results-on-rails-console"></a><a href="#74-verify-results-on-rails-console" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>7.4 - Verify results on Rails console</h2>
+<p>Let's verify whether the task has actually got deleted from the database.</p>
+<pre><code class="hljs css language-bash"><span class="hljs-variable">$rails</span> console
+irb(main):001:0&gt; Task.where(description: <span class="hljs-string">'This is task no.2'</span>)
+  Task Load (0.2ms)  SELECT  <span class="hljs-string">"tasks"</span>.* FROM <span class="hljs-string">"tasks"</span> WHERE <span class="hljs-string">"tasks"</span>.<span class="hljs-string">"description"</span> = ? LIMIT ?  [[<span class="hljs-string">"description"</span>, <span class="hljs-string">"This is task no.2"</span>], [<span class="hljs-string">"LIMIT"</span>, 11]]
+=&gt; <span class="hljs-comment">#&lt;ActiveRecord::Relation [#&lt;Task id: 7, description: "This is task no.2", created_at: "2019-02-07 09:43:10", updated_at: "2019-02-07 09:43:10"&gt;]&gt;</span>
+irb(main):002:0&gt;
+
+</code></pre>
+<p>We are fetching the task which has description 'This is task no.2' using <code>Task.where(description: 'This is task no.2')</code>.
+And we got Task record with Task id: 7, description: &quot;This is task no.2&quot;.
+Now start server again and delete the task which has description 'This is task no.2'.
+Again start Rails console.</p>
+<pre><code class="hljs css language-bash"><span class="hljs-variable">$rails</span> console
+irb(main):001:0&gt; Task.where(description: <span class="hljs-string">'This is task no.2'</span>)
+  Task Load (0.2ms)  SELECT  <span class="hljs-string">"tasks"</span>.* FROM <span class="hljs-string">"tasks"</span> WHERE <span class="hljs-string">"tasks"</span>.<span class="hljs-string">"description"</span> = ? LIMIT ?  [[<span class="hljs-string">"description"</span>, <span class="hljs-string">"This is task no.2"</span>], [<span class="hljs-string">"LIMIT"</span>, 11]]
+=&gt; <span class="hljs-comment">#&lt;ActiveRecord::Relation []&gt;</span>
+irb(main):002:0&gt;
+
+</code></pre>
+<p>Now we did not get Task record with Task id: 7, description: &quot;This is task no.2&quot;.
+It means it is actually deleted from the database.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="https://im-amitto.github.io/docusaures-website/docs/chapter_6"><span class="arrow-prev">← </span><span>Chapter 6 - Update the task</span></a><a class="docs-next button" href="https://im-amitto.github.io/docusaures-website/docs/chapter_8"><span>Chapter 8 - Introduction to Validation</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#71-adding-button-to-delete-the-task">7.1 - Adding button to delete the task</a></li><li><a href="#72-implement-destroy-action-in-taskscontroller">7.2 - Implement <code>destroy</code> action in <code>TasksController</code></a></li><li><a href="#73-flow-of-deleting-a-task">7.3 - Flow of deleting a task</a></li><li><a href="#74-verify-results-on-rails-console">7.4 - Verify results on Rails console</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="copyright">Copyright © 2019 BigBinary</section></footer></div></body></html>
