@@ -1,10 +1,56 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Configuring Queue Adapters for Background Processing · BigBinary</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;hr&gt;
-"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Configuring Queue Adapters for Background Processing · BigBinary"/><meta property="og:type" content="website"/><meta property="og:url" content="https://im-amitto.github.io/https://im-amitto.github.io/docusaures-website/"/><meta property="og:description" content="&lt;hr&gt;
-"/><meta property="og:image" content="https://im-amitto.github.io/https://im-amitto.github.io/docusaures-website/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://im-amitto.github.io/https://im-amitto.github.io/docusaures-website/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="https://im-amitto.github.io/docusaures-website/img/logo.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="stylesheet" href="./../css/prism.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="./../js/code-block-buttons.js"></script><script type="text/javascript" src="./../js/prism.js"></script><script type="text/javascript" src="./../js/highlighter.js"></script><link rel="stylesheet" href="https://im-amitto.github.io/docusaures-website/css/main.css"/><script src="https://im-amitto.github.io/docusaures-website/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="https://im-amitto.github.io/docusaures-website/"><img class="logo" src="https://im-amitto.github.io/docusaures-website/img/logo.png" alt="BigBinary"/><h2 class="headerTitleWithLogo">BigBinary</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"></ul></nav></div></header></div></div><div class="navPusher singleRowMobileNav"><div class="docMainWrapper wrapper"><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Configuring Queue Adapters for Background Processing</h1></header><article><div><span><hr>
-<p>id: chapter-19
-title: Configuring Queue Adapters for Background Processing</p>
-<hr>
-<p>As our application size grows,
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Configuring Queue Adapters for Background Processing · BigBinary</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;As our application size grows,&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Configuring Queue Adapters for Background Processing · BigBinary"/><meta property="og:type" content="website"/><meta property="og:url" content="https://im-amitto.github.io/https://im-amitto.github.io/docusaures-website/"/><meta property="og:description" content="&lt;p&gt;As our application size grows,&lt;/p&gt;
+"/><meta property="og:image" content="https://im-amitto.github.io/https://im-amitto.github.io/docusaures-website/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://im-amitto.github.io/https://im-amitto.github.io/docusaures-website/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="https://im-amitto.github.io/docusaures-website/img/logo.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="stylesheet" href="./../css/prism.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="./../js/code-block-buttons.js"></script><script type="text/javascript" src="./../js/prism.js"></script><script type="text/javascript" src="./../js/highlighter.js"></script><link rel="stylesheet" href="https://im-amitto.github.io/docusaures-website/css/main.css"/><script src="https://im-amitto.github.io/docusaures-website/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="https://im-amitto.github.io/docusaures-website/"><img class="logo" src="https://im-amitto.github.io/docusaures-website/img/logo.png" alt="BigBinary"/><h2 class="headerTitleWithLogo">BigBinary</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"></ul></nav></div></header></div></div><div class="navPusher singleRowMobileNav"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>book</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">book</h3><ul class=""><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/">Introduction</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter-0.md">Installing Ruby on Rails and VSCode</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter-1.md">Building a new Rails application</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter-2.md">Getting started with Ruby on Rails</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter-3.md">Task controller</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter-4.md">Adding tasks through browser</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter-5.md">Show a task</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter-6.md">Update the task</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter-7.md">Delete the task</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter-8.md">Introduction to Validation</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter-9.md">Active Record Callbacks and Object Life Cycle</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter-10.md">Introducing User model</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter-11.md">Authentication</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter-12.md">Introduction to Authorization</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter-13.md">State Management via Ajax</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter-14.md">Adding comments to Tasks</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter-15.md">Attaching files</a></li><li class="navListItem"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter-16.md">Introduction to Testing and Writing Unit Tests</a></li><li class="navListItem navListItemActive"><a class="navItem" href="https://im-amitto.github.io/docusaures-website/docs/chapter-19.md">Configuring Queue Adapters for Background Processing</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Configuring Queue Adapters for Background Processing</h1></header><article><div><span><p>As our application size grows,
 it becomes important to offload some computing/processing
 to run in the background so that the end user's
 experience in terms of performance of the app doesn't take a hit.
@@ -232,4 +278,4 @@ notice that the log is printed in the sidekiq window
 printing all the attributes of the newly created task.</p>
 <p>Let's make use of the queue adapters that we've defined
 and send email notifications in our next chapter.</p>
-</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#choosing-a-backend-adapter">Choosing a backend adapter</a></li><li><a href="#creating-a-job">Creating a Job</a></li><li><a href="#executing-the-job">Executing the Job</a></li><li><a href="#active-job-callbacks">Active Job callbacks</a></li><li><a href="#using-job-to-log-ip-address">Using job to log ip address</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="copyright">Copyright © 2019 BigBinary</section></footer></div></body></html>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="https://im-amitto.github.io/docusaures-website/docs/chapter-16.md"><span class="arrow-prev">← </span><span>Introduction to Testing and Writing Unit Tests</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#choosing-a-backend-adapter">Choosing a backend adapter</a></li><li><a href="#creating-a-job">Creating a Job</a></li><li><a href="#executing-the-job">Executing the Job</a></li><li><a href="#active-job-callbacks">Active Job callbacks</a></li><li><a href="#using-job-to-log-ip-address">Using job to log ip address</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="copyright">Copyright © 2019 BigBinary</section></footer></div></body></html>
