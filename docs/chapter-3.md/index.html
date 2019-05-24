@@ -1,0 +1,134 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Task controller · BigBinary</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;hr&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Task controller · BigBinary"/><meta property="og:type" content="website"/><meta property="og:url" content="https://im-amitto.github.io/https://im-amitto.github.io/docusaures-website/"/><meta property="og:description" content="&lt;hr&gt;
+"/><meta property="og:image" content="https://im-amitto.github.io/https://im-amitto.github.io/docusaures-website/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://im-amitto.github.io/https://im-amitto.github.io/docusaures-website/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="https://im-amitto.github.io/docusaures-website/img/logo.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="stylesheet" href="./../css/prism.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="./../js/code-block-buttons.js"></script><script type="text/javascript" src="./../js/prism.js"></script><script type="text/javascript" src="./../js/highlighter.js"></script><link rel="stylesheet" href="https://im-amitto.github.io/docusaures-website/css/main.css"/><script src="https://im-amitto.github.io/docusaures-website/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="https://im-amitto.github.io/docusaures-website/"><img class="logo" src="https://im-amitto.github.io/docusaures-website/img/logo.png" alt="BigBinary"/><h2 class="headerTitleWithLogo">BigBinary</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"></ul></nav></div></header></div></div><div class="navPusher singleRowMobileNav"><div class="docMainWrapper wrapper"><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Task controller</h1></header><article><div><span><hr>
+<p>id: chapter-3
+title: Tasks controller</p>
+<hr>
+<p>In the last chapter we created Task model and then we created Tasks table..
+In this chapter we'll create tasks and will display them in the browser.</p>
+<h2><a class="anchor" aria-hidden="true" id="controller-and-actions"></a><a href="#controller-and-actions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Controller and Actions</h2>
+<p>Rails <code>Controllers</code> are Ruby classes, that store a series of actions.
+<code>Actions</code> in a controller map to
+urls involved in serving network requests from the app.
+We will get into its details as chapter progresses.</p>
+<p>Let's generate a controller to carry out tasks related operations.</p>
+<pre><code class="hljs css language-bash">$ rails generate controller Tasks
+Running via Spring preloader <span class="hljs-keyword">in</span> process 28301
+      create  app/controllers/tasks_controller.rb
+      invoke  erb
+      create    app/views/tasks
+      invoke  test_unit
+      create    <span class="hljs-built_in">test</span>/controllers/tasks_controller_test.rb
+      invoke  helper
+      create    app/helpers/tasks_helper.rb
+      invoke    test_unit
+      invoke  assets
+      invoke    coffee
+      create      app/assets/javascripts/tasks.coffee
+      invoke    scss
+      create      app/assets/stylesheets/tasks.scss
+
+
+</code></pre>
+<p>Notice that the above command has created multiple files.
+Let's open the controller file <code>app/controllers/tasks_controller.rb</code></p>
+<pre><code class="hljs css language-ruby"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TasksController</span> &lt; ApplicationController</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>Now let's add action <code>index</code> to  <code>TasksController</code>.
+Open the file <code>app/controllers/tasks_controller.rb</code></p>
+<pre><code class="hljs css language-ruby"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TasksController</span> &lt; ApplicationController</span>
+
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">index</span></span>
+  <span class="hljs-keyword">end</span>
+
+<span class="hljs-keyword">end</span>
+
+</code></pre>
+<p>now go to the browser and hit <code>http://0.0.0.0:3000/tasks</code>.</p>
+<p><img src="./../img/tasksRouteError.png" alt="alt text"></p>
+<h2><a class="anchor" aria-hidden="true" id="defining-route-to-map-request-path-to-controller-action"></a><a href="#defining-route-to-map-request-path-to-controller-action" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Defining route to map request path to controller action</h2>
+<p>Whenever we hit URL on the browser rails application looks up for that path in the routes file.
+If a match is found, then the mapped action in the controller is invoked.
+For example, let's add the code in routes file <code>config/routes.rb</code>
+to route URL <code>http://0.0.0.0:3000/tasks</code> to <code>index</code> action in <code>TasksController</code>.</p>
+<p><code>config/routes.rb</code></p>
+<pre><code class="hljs css language-ruby">Rails.application.routes.draw <span class="hljs-keyword">do</span>
+
+  get <span class="hljs-string">'/tasks'</span>, <span class="hljs-symbol">to:</span> <span class="hljs-string">'tasks#index'</span>
+
+<span class="hljs-keyword">end</span>
+
+
+</code></pre>
+<p>Now try to refresh the browser.
+<img src="./../img/indexMissingError.png" alt="alt text"></p>
+<p>Oops! We have an other error.
+That's because Rails automatically searches for template with name <code>index.html.erb</code> within the directory <code>app/view/ControllerName/</code>.
+Here <code>.erb</code> extension is for Embedded Ruby HTML file.</p>
+<h2><a class="anchor" aria-hidden="true" id="adding-view-file"></a><a href="#adding-view-file" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Adding view file</h2>
+<p>So let's create the file that is being expected inside <code>/app/view/tasks/</code>.
+This file is responsible for rendering all tasks' information in the browser.</p>
+<p><code>/app/view/tasks/index.html.erb</code></p>
+<pre><code class="hljs css language-ruby">&lt;H1&gt;Hello!!&lt;/H1&gt;
+</code></pre>
+<p><img src="./../img/HelloIndexPage.png" alt="alt text">.</p>
+<h2><a class="anchor" aria-hidden="true" id="using-rails-console-add-two-tasks-and-run-taskall"></a><a href="#using-rails-console-add-two-tasks-and-run-taskall" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using Rails console add two tasks and Run Task.all</h2>
+<p>Now open your terminal and type <code>$ rails console</code>.</p>
+<pre><code class="hljs css language-bash">$ rails console
+Running via Spring preloader <span class="hljs-keyword">in</span> process 10511
+Loading development environment (Rails 5.2.2)
+irb(main):001:0&gt;
+
+</code></pre>
+<p>Let's create a <code>Task</code> record and save it in the table.</p>
+<pre><code class="hljs css language-msg">irb(main)<span class="hljs-symbol">:005</span><span class="hljs-symbol">:0</span>&gt; task = Task.new(descripti<span class="hljs-symbol">on:</span><span class="hljs-string">"This is my first task"</span>)
+=&gt; #&lt;Task <span class="hljs-symbol">id:</span> nil, descripti<span class="hljs-symbol">on:</span> <span class="hljs-string">"This is my first task"</span>, created_<span class="hljs-symbol">at:</span> nil, updated_<span class="hljs-symbol">at:</span> nil&gt;
+irb(main)<span class="hljs-symbol">:006</span><span class="hljs-symbol">:0</span>&gt; task.save
+   (<span class="hljs-number">0.3</span>ms)  begin transaction
+  Task Create (<span class="hljs-number">0.7</span>ms)  INSERT INTO <span class="hljs-string">"tasks"</span> (<span class="hljs-string">"description"</span>, <span class="hljs-string">"created_at"</span>, <span class="hljs-string">"updated_at"</span>) VALUES (?, ?, ?)  [[<span class="hljs-string">"description"</span>, <span class="hljs-string">"This is my first task"</span>], [<span class="hljs-string">"created_at"</span>, <span class="hljs-string">"2019-01-30 07:35:50.117114"</span>], [<span class="hljs-string">"updated_at"</span>, <span class="hljs-string">"2019-01-30 07:35:50.117114"</span>]]
+   (<span class="hljs-number">196.3</span>ms)  commit transaction
+=&gt; <span class="hljs-built_in">true</span>
+irb(main)<span class="hljs-symbol">:009</span><span class="hljs-symbol">:0</span>&gt;
+</code></pre>
+<p>Let's create one more task and try to save this record.</p>
+<pre><code class="hljs css language-msg">irb(main)<span class="hljs-symbol">:007</span><span class="hljs-symbol">:0</span>&gt; task = Task.new(descripti<span class="hljs-symbol">on:</span><span class="hljs-string">"This is my second task"</span>)
+=&gt; #&lt;Task <span class="hljs-symbol">id:</span> nil, descripti<span class="hljs-symbol">on:</span> <span class="hljs-string">"This is my second task"</span>, created_<span class="hljs-symbol">at:</span> nil, updated_<span class="hljs-symbol">at:</span> nil&gt;
+irb(main)<span class="hljs-symbol">:008</span><span class="hljs-symbol">:0</span>&gt; task.save
+   (<span class="hljs-number">0.1</span>ms)  begin transaction
+  Task Create (<span class="hljs-number">0.6</span>ms)  INSERT INTO <span class="hljs-string">"tasks"</span> (<span class="hljs-string">"description"</span>, <span class="hljs-string">"created_at"</span>, <span class="hljs-string">"updated_at"</span>) VALUES (?, ?, ?)  [[<span class="hljs-string">"description"</span>, <span class="hljs-string">"This is my second task"</span>], [<span class="hljs-string">"created_at"</span>, <span class="hljs-string">"2019-01-30 07:36:01.248102"</span>], [<span class="hljs-string">"updated_at"</span>, <span class="hljs-string">"2019-01-30 07:36:01.248102"</span>]]
+   (<span class="hljs-number">181.4</span>ms)  commit transaction
+=&gt; <span class="hljs-built_in">true</span>
+irb(main)<span class="hljs-symbol">:009</span><span class="hljs-symbol">:0</span>&gt;
+</code></pre>
+<p>Calling <code>task.save</code> saves the object in the database.
+i.e., an entry in <code>tasks</code> table will be created.</p>
+<p>Now we can see all the tasks stored in the database using <code>Task.all</code></p>
+<pre><code class="hljs css language-msg">irb(main)<span class="hljs-symbol">:009</span><span class="hljs-symbol">:0</span>&gt; Task.all
+  Task Load (<span class="hljs-number">0.3</span>ms)  SELECT  <span class="hljs-string">"tasks"</span>.* FROM <span class="hljs-string">"tasks"</span> LIMIT ?  [[<span class="hljs-string">"LIMIT"</span>, <span class="hljs-number">11</span>]]
+=&gt; #&lt;ActiveReco<span class="hljs-symbol">rd:</span><span class="hljs-symbol">:Re</span>lation [#&lt;Task <span class="hljs-symbol">id:</span> <span class="hljs-number">3</span>, descripti<span class="hljs-symbol">on:</span> <span class="hljs-string">"This is my first task"</span>, created_<span class="hljs-symbol">at:</span> <span class="hljs-string">"2019-01-30 07:35:50"</span>, updated_<span class="hljs-symbol">at:</span> <span class="hljs-string">"2019-01-30 07:35:50"</span>&gt;, #&lt;Task <span class="hljs-symbol">id:</span> <span class="hljs-number">4</span>, descripti<span class="hljs-symbol">on:</span> <span class="hljs-string">"This is my second task"</span>, created_<span class="hljs-symbol">at:</span> <span class="hljs-string">"2019-01-30 07:36:01"</span>, updated_<span class="hljs-symbol">at:</span> <span class="hljs-string">"2019-01-30 07:36:01"</span>&gt;]&gt;
+irb(main)<span class="hljs-symbol">:010</span><span class="hljs-symbol">:0</span>&gt;
+
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="seeing-the-list-of-tasks-in-the-browser"></a><a href="#seeing-the-list-of-tasks-in-the-browser" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Seeing the list of tasks in the browser</h2>
+<p>Let's display all the tasks in the browser.</p>
+<p><code>/app/controllers/tasks_controller.rb</code></p>
+<pre><code class="hljs css language-ruby"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TasksController</span> &lt; ApplicationController</span>
+
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">index</span></span>
+    @tasks = Task.all
+  <span class="hljs-keyword">end</span>
+
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>Now, change <code>app/views/tasks/index.html.erb</code> to have following code.</p>
+<pre><code class="hljs css language-ruby">&lt;h1&gt;Tasks List&lt;/h1&gt;
+
+&lt;% @tasks.each do |task| %&gt;
+  &lt;p&gt;
+    &lt;%= task.description %&gt;
+  &lt;/p&gt;
+&lt;% end %&gt;
+</code></pre>
+<p>Now visit URL <code>http://0.0.0.0:3000/tasks</code> you can see all the tasks in the browser.</p>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#controller-and-actions">Controller and Actions</a></li><li><a href="#defining-route-to-map-request-path-to-controller-action">Defining route to map request path to controller action</a></li><li><a href="#adding-view-file">Adding view file</a></li><li><a href="#using-rails-console-add-two-tasks-and-run-taskall">Using Rails console add two tasks and Run Task.all</a></li><li><a href="#seeing-the-list-of-tasks-in-the-browser">Seeing the list of tasks in the browser</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="copyright">Copyright © 2019 BigBinary</section></footer></div></body></html>

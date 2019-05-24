@@ -1,0 +1,94 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Installing Ruby on Rails and VSCode · BigBinary</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;installing-rails-on-mac-os-x&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#installing-rails-on-mac-os-x&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Installing Rails on Mac OS X&lt;/h2&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Installing Ruby on Rails and VSCode · BigBinary"/><meta property="og:type" content="website"/><meta property="og:url" content="https://im-amitto.github.io/https://im-amitto.github.io/docusaures-website/"/><meta property="og:description" content="&lt;h2&gt;&lt;a class=&quot;anchor&quot; aria-hidden=&quot;true&quot; id=&quot;installing-rails-on-mac-os-x&quot;&gt;&lt;/a&gt;&lt;a href=&quot;#installing-rails-on-mac-os-x&quot; aria-hidden=&quot;true&quot; class=&quot;hash-link&quot;&gt;&lt;svg class=&quot;hash-link-icon&quot; aria-hidden=&quot;true&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Installing Rails on Mac OS X&lt;/h2&gt;
+"/><meta property="og:image" content="https://im-amitto.github.io/https://im-amitto.github.io/docusaures-website/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://im-amitto.github.io/https://im-amitto.github.io/docusaures-website/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="https://im-amitto.github.io/docusaures-website/img/logo.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="stylesheet" href="./../css/prism.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="./../js/code-block-buttons.js"></script><script type="text/javascript" src="./../js/prism.js"></script><script type="text/javascript" src="./../js/highlighter.js"></script><link rel="stylesheet" href="https://im-amitto.github.io/docusaures-website/css/main.css"/><script src="https://im-amitto.github.io/docusaures-website/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="https://im-amitto.github.io/docusaures-website/"><img class="logo" src="https://im-amitto.github.io/docusaures-website/img/logo.png" alt="BigBinary"/><h2 class="headerTitleWithLogo">BigBinary</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"></ul></nav></div></header></div></div><div class="navPusher singleRowMobileNav"><div class="docMainWrapper wrapper"><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Installing Ruby on Rails and VSCode</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="installing-rails-on-mac-os-x"></a><a href="#installing-rails-on-mac-os-x" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installing Rails on Mac OS X</h2>
+<p>Check the version of your operating system.
+If your version number is 10.9 or higher, follow the next step. If your OS X version is less than 10.9, you should consider upgrading your operating system to 10.9 or higher. It completely free!</p>
+<p>Install XCode Command Line Developer Tools.</p>
+<pre><code class="hljs css language-bash">$ xcode-select --install
+</code></pre>
+<p>Install Homebrew</p>
+<pre><code class="hljs css language-bash">$ ruby -e <span class="hljs-string">"<span class="hljs-variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span>
+</code></pre>
+<p>Install rbenv</p>
+<pre><code class="hljs css language-bash">$ brew update
+$ brew install rbenv
+$ <span class="hljs-built_in">echo</span> <span class="hljs-string">'eval "$(rbenv init -)"'</span> &gt;&gt; ~/.bash_profile
+$ <span class="hljs-built_in">source</span> ~/.bash_profile
+</code></pre>
+<p>Install Ruby with rbenv</p>
+<p>You can install specific Ruby version with rbenv. To find the newest version of Ruby, you can user the command <code>rbenv install -l</code></p>
+<pre><code class="hljs css language-bash">$ rbenv install 2.5.1
+</code></pre>
+<p>Set default Ruby</p>
+<pre><code class="hljs css language-bash">$ rbenv global 2.5.1
+</code></pre>
+<p>Install rails</p>
+<pre><code class="hljs css language-bash">$ gem install rails --no-document
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="installing-rails-on-windows"></a><a href="#installing-rails-on-windows" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installing Rails on Windows</h2>
+<p>Download RailsInstaller from <code>railsinstaller.org</code> and run it.
+Click through the installer using the default options.
+Open <code>Command Prompt with Ruby on Rails</code>, run the following command:</p>
+<pre><code class="hljs css language-bash">$ rails -v
+</code></pre>
+<p>If you see the following message:</p>
+<pre><code class="hljs css language-msg">the<span class="hljs-built_in"> system </span>cannot <span class="hljs-builtin-name">find</span> the path specified
+</code></pre>
+<p>This is because the installer cannot correctly setup the path required to run rails.
+To fix it, we can manually install the rails gem with the following command:</p>
+<pre><code class="hljs css language-bash">$ gem install rails bundler --no-document
+</code></pre>
+<p>This will re-install rails correctly and <code>rails -v</code> should print the current rails version number.</p>
+<pre><code class="hljs css language-bash">$ rails -v
+Rails 5.2.2
+</code></pre>
+<p>Following are few possible errors that you might face.</p>
+<ol>
+<li>Gem::RemoteFetcher error
+When running <code>rails new myapp</code> or <code>gem update rails</code> if you get this error:</li>
+</ol>
+<pre><code class="hljs css language-msg"><span class="hljs-string">Gem:</span>:<span class="hljs-string">RemoteFetcher:</span>:<span class="hljs-string">FetchError:</span> SSL_connect returned=<span class="hljs-number">1</span> errno=<span class="hljs-number">0</span> state=SSLv3 read
+server certificate <span class="hljs-string">B:</span> certificate verify failed (<span class="hljs-string">https:</span><span class="hljs-comment">//rubygems.org/gems/i18n-0.6.11.gem)</span>
+</code></pre>
+<p>You can resolve this by updating the Rubygems. To check you Rubygem version, use command <code>gem -v</code>.</p>
+<p>To update it, first download the <code>ruby-gems-update</code> gem from <code>rubygems.org</code> . Move the file to <code>c:\\rubygems-update-2.6.11.gem</code> then run:</p>
+<pre><code class="hljs css language-bash">$ gem install --<span class="hljs-built_in">local</span> c:\\rubygems-update-2.6.11.gem
+$ update_rubygems --no-document
+$ gem uninstall rubygems-update -x
+</code></pre>
+<p>Re-Check your version of rubygems. Make sure that your verions number is greater than <code>2.6.5</code>.</p>
+<p>Once it is equal or higher than 2.6.11. Re-run the command that was failing previously.</p>
+<ol start="2">
+<li>‘x64_mingw’ is not a valid platform Error
+When running <code>rails server</code> sometimes you get the following error : <code>'x64_mingw' is not a valid platform</code> If you experience this error after using the RailsInstaller you have to do a small edit to the file Gemfile:</li>
+</ol>
+<p>At at the bottom of the file, you will probably see something like this as one of the last lines in the file: <code>gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]</code>. Delete the <code>:x64_mingw</code> part. In the end it should just say: <code>'tzinfo-data', platforms: [:mingw, :mswin]</code></p>
+<p>After you did that, in the Command Prompt, run <code>bundle update</code>.</p>
+<h2><a class="anchor" aria-hidden="true" id="installing-rails-on-linux"></a><a href="#installing-rails-on-linux" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installing Rails on Linux</h2>
+<p>For Ubuntu:</p>
+<pre><code class="hljs css language-bash">$ sudo apt-get install curl
+$ bash &lt; &lt;(curl -sL https://raw.github.com/railsgirls/installation-scripts/master/rails-install-ubuntu.sh)
+</code></pre>
+<p>For Fedora:</p>
+<pre><code class="hljs css language-bash">$ bash &lt; &lt;(curl -sL https://raw.github.com/railsgirls/installation-scripts/master/rails-install-fedora.sh)
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="configure-vscode"></a><a href="#configure-vscode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configure VSCode</h2>
+<h3><a class="anchor" aria-hidden="true" id="configure-indentation"></a><a href="#configure-indentation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configure indentation</h3>
+<p>Visual Studio Code is a text editor that allows you to develop applications for Windows, Mac and Linux. It’s hosted on GitHub and it also supports extensions.</p>
+<p>While developing applications in Rails, The indentation for the Ruby code is said to be 2 spaces.The Visual Studio Code editor allows us to configure different identations for different languages we use.</p>
+<h3><a class="anchor" aria-hidden="true" id="language-specific-editor-settings"></a><a href="#language-specific-editor-settings" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Language specific editor settings</h3>
+<p>To customize the Visual Studio Code editor by language, we have to run the global command 'Preferences: Configure Language Specific Settings' from the Command Palette(Ctrl+Shift+P).</p>
+<pre><code class="hljs css language-msg">Preferences: Configure Language Specific<span class="hljs-built_in"> Settings
+</span></code></pre>
+<p><img src="./../img/configure_indentation_img01.png" alt=""></p>
+<p><img src="./../img/configure_indentation_img02.png" alt=""></p>
+<p>This opens the Language Picker and from the listed languages, select Ruby which then opens up the Settings editor with the language entry where you can add applicable settings.
+In the user settings json file, add the required settings and save the file.</p>
+<pre><code class="hljs css language-ruby"><span class="hljs-string">"[ruby]"</span>: {
+        <span class="hljs-string">"editor.insertSpaces"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-string">"editor.tabSize"</span>: <span class="hljs-number">2</span>
+  }
+</code></pre>
+<p><img src="./../img/configure_indentation_img03.png" alt=""></p>
+<p>The indentation for the language Ruby is now set to 2 spaces.In this way we can configure indentation for any language that we use in our application.In the above user settings file, the default value of indentation is set to '4'. This can be changed to any value according to the user preference.</p>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#installing-rails-on-mac-os-x">Installing Rails on Mac OS X</a></li><li><a href="#installing-rails-on-windows">Installing Rails on Windows</a></li><li><a href="#installing-rails-on-linux">Installing Rails on Linux</a></li><li><a href="#configure-vscode">Configure VSCode</a><ul class="toc-headings"><li><a href="#configure-indentation">Configure indentation</a></li><li><a href="#language-specific-editor-settings">Language specific editor settings</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="copyright">Copyright © 2019 BigBinary</section></footer></div></body></html>

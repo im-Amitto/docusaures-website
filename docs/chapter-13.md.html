@@ -1,0 +1,121 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>State Management via Ajax · BigBinary</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;hr&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="State Management via Ajax · BigBinary"/><meta property="og:type" content="website"/><meta property="og:url" content="https://im-amitto.github.io/https://im-amitto.github.io/docusaures-website/"/><meta property="og:description" content="&lt;hr&gt;
+"/><meta property="og:image" content="https://im-amitto.github.io/https://im-amitto.github.io/docusaures-website/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://im-amitto.github.io/https://im-amitto.github.io/docusaures-website/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="https://im-amitto.github.io/docusaures-website/img/logo.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="stylesheet" href="./../css/prism.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="./../js/code-block-buttons.js"></script><script type="text/javascript" src="./../js/prism.js"></script><script type="text/javascript" src="./../js/highlighter.js"></script><link rel="stylesheet" href="https://im-amitto.github.io/docusaures-website/css/main.css"/><script src="https://im-amitto.github.io/docusaures-website/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="https://im-amitto.github.io/docusaures-website/"><img class="logo" src="https://im-amitto.github.io/docusaures-website/img/logo.png" alt="BigBinary"/><h2 class="headerTitleWithLogo">BigBinary</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"></ul></nav></div></header></div></div><div class="navPusher singleRowMobileNav"><div class="docMainWrapper wrapper"><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">State Management via Ajax</h1></header><article><div><span><hr>
+<p>id: chapter-13
+title: State Management via Ajax</p>
+<hr>
+<p>In this chapter, we'll add states for our Task.</p>
+<h2><a class="anchor" aria-hidden="true" id="introduce-various-states-in-tasks-like-open-in-progress-done"></a><a href="#introduce-various-states-in-tasks-like-open-in-progress-done" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Introduce various states in tasks like open, in progress, done</h2>
+<p>There should be three states for any task. <code>Open</code>, <code>In progress</code> and <code>Done</code>.
+Whenever we'll create the task then its state should be <code>open</code>.</p>
+<p>For storing the states we'll use <code>enum</code> record type.</p>
+<p>Enum: Entities that your model contain many attributes of various types. A quite popular requirement is to create an attribute that can be assigned to one of a few available values. In programming, that type is called enumeration or just enum.</p>
+<p>Example:
+We have three states for our task. We will keep this in the <code>task</code> model.</p>
+<p>enum state: [&quot;open&quot;, &quot;in_progress&quot;, &quot;done&quot;]</p>
+<p>And we'll add state column in the database with type Integer and then Rails will assign those value internally.</p>
+<p>So, Let's add a new column <code>state</code> in the task table.</p>
+<pre><code class="hljs css language-bash">$ rails g migration add_state_to_tasks state:<span class="hljs-built_in">integer</span>
+Running via Spring preloader <span class="hljs-keyword">in</span> process 14663
+      invoke  active_record
+      create    db/migrate/20190306032809_add_state_to_tasks.rb
+
+</code></pre>
+<p>Open your migration and add default value for your state</p>
+<pre><code class="hljs css language-ruby"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AddStateToTasks</span> &lt; ActiveRecord::Migration[5.2]</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">change</span></span>
+    add_column <span class="hljs-symbol">:tasks</span>, <span class="hljs-symbol">:state</span>, <span class="hljs-symbol">:integer</span>, <span class="hljs-symbol">default:</span> <span class="hljs-string">"open"</span>
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+
+</code></pre>
+<p>Now in the task model add the following line.</p>
+<pre><code class="hljs css language-ruby"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Task</span> &lt; ApplicationRecord</span>
+  ...
+
+  enum <span class="hljs-symbol">state:</span> [<span class="hljs-string">"open"</span>, <span class="hljs-string">"in_progress"</span>, <span class="hljs-string">"done"</span>]
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>Now run <code>rails db:migrate</code> to reflect changes into the database.</p>
+<h2><a class="anchor" aria-hidden="true" id="update-states-on-task-show-page-through-ajax-requests"></a><a href="#update-states-on-task-show-page-through-ajax-requests" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Update states on task show page through ajax requests.</h2>
+<p>Ajax is used to create asynchronous web applications. In this chapter, we will update the state of the task without refreshing the page.</p>
+<p>Now we want to update the State of the particular task so it will be <code>PATCH</code> request.
+So, Let's create another controller to handle the update request of state of the task.</p>
+<p><code>touch app/controllers/status_controller.rb</code>.</p>
+<p>Before writing <code>update</code> action in <code>status</code> controller let's add routes for the status controller.
+Let's create the nested routes for the status controller.
+open <code>routes.rb</code> file.</p>
+<p>Now we will use <code>resources :tasks</code> with nested <code>resources :status</code> which will generate all the routes for <code>task</code> controller so, remove the following lines.</p>
+<pre><code class="hljs css language-ruby">  get   <span class="hljs-string">'/tasks'</span>,               <span class="hljs-symbol">to:</span> <span class="hljs-string">'tasks#index'</span>
+  get   <span class="hljs-string">'/tasks/new'</span> ,          <span class="hljs-symbol">to:</span> <span class="hljs-string">'tasks#new'</span>
+  post  <span class="hljs-string">'/tasks'</span>,               <span class="hljs-symbol">to:</span> <span class="hljs-string">'tasks#create'</span>
+  get   <span class="hljs-string">'/tasks/:id'</span>,           <span class="hljs-symbol">to:</span> <span class="hljs-string">'tasks#show'</span>, <span class="hljs-symbol">as:</span> <span class="hljs-string">'task'</span>
+  get   <span class="hljs-string">'/tasks/:id/edit'</span>,      <span class="hljs-symbol">to:</span> <span class="hljs-string">'tasks#edit'</span>, <span class="hljs-symbol">as:</span> <span class="hljs-string">'edit_task'</span>
+  patch <span class="hljs-string">'/tasks/:id'</span>,           <span class="hljs-symbol">to:</span> <span class="hljs-string">'tasks#update'</span>
+  delete<span class="hljs-string">'/tasks/:id'</span>,           <span class="hljs-symbol">to:</span> <span class="hljs-string">'tasks#destroy'</span>
+
+</code></pre>
+<p>And add the following nested route.</p>
+<pre><code class="hljs css language-ruby">  resources <span class="hljs-symbol">:tasks</span> <span class="hljs-keyword">do</span>
+    resource <span class="hljs-symbol">:status</span>, <span class="hljs-symbol">only:</span> [<span class="hljs-symbol">:update</span>]
+  <span class="hljs-keyword">end</span>
+</code></pre>
+<p>Notice that we are using <code>resource</code> for status and not <code>resources</code>.
+Defining <code>:resource</code> will make all the actions that we have for <code>:resources</code>
+except <code>index</code> action.
+In our use case, we are limiting to using only <code>update</code> action
+i.e., a status of a task can only be updated.</p>
+<p>Now add state field in our task show page.
+open <code>app/views/tasks/show.html.erb</code> file</p>
+<pre><code class="hljs css language-ruby">&lt;div&gt;
+    &lt;h2&gt; Here are your task details! &lt;/h2&gt;
+    &lt;h3&gt;
+        &lt;%= @task.id %&gt;)
+        &lt;%= @task.description %&gt;
+    &lt;/h3&gt;
+    Current Task State :
+    &lt;span id="state"&gt;
+        &lt;strong&gt;&lt;%= @task.state %&gt;&lt;/strong&gt;
+    &lt;/span&gt;
+    &lt;br&gt;
+    &lt;br&gt;
+    Change the state of Task:
+    &lt;%= button_to "open", task_status_url({task_id: @task.id, state: "open" }), remote: true, date:{type: 'script'}, method: :patch%&gt;
+    &lt;%= button_to "in progress", task_status_url({task_id: @task.id, state: "in_progress" }), remote: true, date:{type: 'script'}, method: :patch%&gt;
+    &lt;%= button_to "Done", task_status_url({task_id: @task.id, state: "done" }), remote: true, date:{type: 'script'}, method: :patch%&gt;
+
+    &lt;%= link_to 'Edit', edit_task_path(@task) %&gt;
+&lt;/div&gt;
+
+
+</code></pre>
+<p><code>remote: true</code> is used to create Ajax call so, that page should not refresh and we should send the request to the server.</p>
+<p>Now open controller <code>status_controller.rb</code> and <code>update</code> action as following.</p>
+<pre><code class="hljs css language-ruby"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">StatusController</span> &lt; ApplicationController</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">update</span></span>
+    @task = Task.find(params[<span class="hljs-symbol">:id</span>])
+    @task.state = params[<span class="hljs-symbol">:state</span>]
+    <span class="hljs-keyword">if</span> @task.save
+      respond_to <span class="hljs-keyword">do</span> <span class="hljs-params">|format|</span>
+        format.js { render <span class="hljs-string">'update'</span> }
+      <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+
+</code></pre>
+<p>Now create new file <code>app/views/status/update.js.erb</code>.
+and add following code in that file.</p>
+<pre><code class="hljs css language-ruby">$(<span class="hljs-string">'#state'</span>).html(<span class="hljs-string">"&lt;strong&gt;&lt;%= @task.state %&gt;&lt;strong&gt;"</span>);
+</code></pre>
+<p>We are using <code>jquery</code> here so we need to add <code>jquery-rails</code> gem in our Gemfile.
+open Gemfile and add following gem.</p>
+<p><code>gem 'jquery-rails'</code></p>
+<p>And then run <code>bundle install</code></p>
+<p>then following lines in your <code>application.js</code> file.</p>
+<pre><code class="hljs css language-msg"><span class="hljs-comment">//= require jquery</span>
+<span class="hljs-comment">//= require jquery_ujs</span>
+
+</code></pre>
+<p>Now open your show page of the task. Now we can change the state of the task without refreshing the page.</p>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#introduce-various-states-in-tasks-like-open-in-progress-done">Introduce various states in tasks like open, in progress, done</a></li><li><a href="#update-states-on-task-show-page-through-ajax-requests">Update states on task show page through ajax requests.</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="copyright">Copyright © 2019 BigBinary</section></footer></div></body></html>
